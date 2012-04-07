@@ -1,1 +1,3 @@
 lib/Box2D_v2.2.1/Build/*
+/src/sandbox/nbproject/private/
+/sandbox/PremiersTestsBen/nbproject/private/
