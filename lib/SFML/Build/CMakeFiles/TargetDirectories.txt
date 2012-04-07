@@ -1,0 +1,5 @@
+/home/thiut/SFML/Build/src/SFML/Audio/CMakeFiles/sfml-audio.dir
+/home/thiut/SFML/Build/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir
+/home/thiut/SFML/Build/src/SFML/Network/CMakeFiles/sfml-network.dir
+/home/thiut/SFML/Build/src/SFML/System/CMakeFiles/sfml-system.dir
+/home/thiut/SFML/Build/src/SFML/Window/CMakeFiles/sfml-window.dir
