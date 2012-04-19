@@ -72,9 +72,7 @@ int main(int argc, char** argv) {
     // Création et assignation d'un renderer pour les objets Box2D
     DebugDraw* debugDraw;
     debugDraw = new DebugDraw(window);
-    //debugDraw->SetFlags(b2Draw::e_aabbBit);
     world.SetDebugDraw(debugDraw);
-    
    
     // Boucle principale : tant que la fenêtre est ouverte
     while(window->IsOpen()) {
@@ -83,16 +81,9 @@ int main(int argc, char** argv) {
         while(window->PollEvent(sfmlEvent)) {
             if(sfmlEvent.Type == sf::Event::Closed) window->Close();
         }
-        world.Step(timestep,velocityIterations,positionIterations);
-        body->SetAwake(true);
         window->Draw(box);
         window->Draw(sprite);
         world.DrawDebugData();
-        
-        b2Vec2 position = body->GetPosition();
-        float32 angle = body->GetAngle();
-        //printf("%4.2f %4.2f %4.2f\n", position.x, position.y, angle);
-
         
         window->Display();
     }

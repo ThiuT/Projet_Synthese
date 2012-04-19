@@ -34,7 +34,8 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/main.o
+	${OBJECTDIR}/main.o \
+	${OBJECTDIR}/_ext/283143845/DebugDraw.o
 
 
 # C Compiler Flags
@@ -51,7 +52,7 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=-lBox2D -lBox2D -lsfml-audio -lsfml-graphics -lsfml-network -lsfml-system -lsfml-window
+LDLIBSOPTIONS=-L/usr/local/lib -lBox2D -lBox2D -lsfml-audio -lsfml-graphics -lsfml-network -lsfml-system -lsfml-window
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
@@ -65,6 +66,11 @@ ${OBJECTDIR}/main.o: main.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
 	$(COMPILE.cc) -g -I/usr/local/include/SFML -I/usr/local/include/Box2D -MMD -MP -MF $@.d -o ${OBJECTDIR}/main.o main.cpp
+
+${OBJECTDIR}/_ext/283143845/DebugDraw.o: /home/thiut/Documents/ESIL/Projet_Synthese/sandbox/PremiersTestsBen/DebugDraw.cpp 
+	${MKDIR} -p ${OBJECTDIR}/_ext/283143845
+	${RM} $@.d
+	$(COMPILE.cc) -g -I/usr/local/include/SFML -I/usr/local/include/Box2D -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/283143845/DebugDraw.o /home/thiut/Documents/ESIL/Projet_Synthese/sandbox/PremiersTestsBen/DebugDraw.cpp
 
 # Subprojects
 .build-subprojects:
