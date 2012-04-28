@@ -42,6 +42,8 @@ public:
 	void DrawTransform(const b2Transform& xf);
 private:
 	sf::RenderWindow *window;
+        int width;
+        int height;
 
 	sf::Color B2SFColor(const b2Color &color);
 };

@@ -21,48 +21,35 @@ int main(int argc, char** argv) {
     window->SetPosition(74,155);
     // Création d'un gestionnaire d'évennements SFML
     sf::Event sfmlEvent;
-    // Création d'une boite SFML et initialisation
-    sf::RectangleShape box;
-    box.SetPosition(100,100);
-    box.SetSize(sf::Vector2f(50,50));
-    box.SetFillColor(sf::Color::Red);
-    
-    // Création d'une texture (chargement d'une image en mémoire)
-    sf::Texture texture;
-    if(!texture.LoadFromFile("smiley.png")) return EXIT_FAILURE;
-    // Création d'un sprite matérialisant la texture
-    sf::Sprite sprite;
-    sprite.SetTexture(texture);
-    sprite.SetPosition(400,400);
     
     // Définition des propriétés d'un monde Box2D
-    b2Vec2 gravity(0.0f, -10.0f);
-    int32 velocityIterations = 6;
-    int32 positionIterations = 2;
-    int32 scale = 30;
+    b2Vec2 gravity(0.0f, -0.98f);
+    int32 velocityIterations = 10;
+    int32 positionIterations = 3;
+    //int32 scale = 30;
     float32 timestep = 1.0f/60.0f; // = 60Hz
 
     // Création d'un monde Box2D
-    b2World world(gravity);
-    world.SetAllowSleeping(true);
+    b2World* world = new b2World(gravity);
+    world->SetAllowSleeping(true);
     
     // Création du "plancher"
     b2BodyDef groundBodyDef;
-    groundBodyDef.position.Set(0.0f, -10.0f);
-    b2Body* groundBody = world.CreateBody(&groundBodyDef);
+    groundBodyDef.position.Set(4.0f,0.0f);
+    b2Body* groundBody = world->CreateBody(&groundBodyDef);
     b2PolygonShape groundBox;
-    groundBox.SetAsBox(50.0f, 10.0f);
+    groundBox.SetAsBox(3.0f, 0.5f);
     groundBody->CreateFixture(&groundBox, 0.0f);
     
     // Création d'un corps dans le monde
     b2BodyDef bodyDef;
     bodyDef.type = b2_dynamicBody;
-    bodyDef.position.Set(0.0f, 4.0f);
-    b2Body* body = world.CreateBody(&bodyDef);
+    bodyDef.position.Set(2.0f, 4.0f);
+    b2Body* body = world->CreateBody(&bodyDef);
     
     // Association d'une forme de polygone à ce corps
     b2PolygonShape dynamicBox;
-    dynamicBox.SetAsBox(1.0f,1.0f);
+    dynamicBox.SetAsBox(0.2f,0.2f);
     b2FixtureDef fixtureDef;
     fixtureDef.shape = &dynamicBox;
     fixtureDef.density = 1.0f;
@@ -72,8 +59,8 @@ int main(int argc, char** argv) {
     // Création et assignation d'un renderer pour les objets Box2D
     DebugDraw* debugDraw;
     debugDraw = new DebugDraw(window);
-    //debugDraw->SetFlags(b2Draw::e_aabbBit);
-    world.SetDebugDraw(debugDraw);
+    debugDraw->AppendFlags(b2Draw::e_shapeBit);
+    world->SetDebugDraw(debugDraw);
     
    
     // Boucle principale : tant que la fenêtre est ouverte
@@ -83,20 +70,19 @@ int main(int argc, char** argv) {
         while(window->PollEvent(sfmlEvent)) {
             if(sfmlEvent.Type == sf::Event::Closed) window->Close();
         }
-        world.Step(timestep,velocityIterations,positionIterations);
-        body->SetAwake(true);
-        window->Draw(box);
-        window->Draw(sprite);
-        world.DrawDebugData();
+        world->Step(timestep,velocityIterations,positionIterations);
         
-        b2Vec2 position = body->GetPosition();
-        float32 angle = body->GetAngle();
+        
+        world->DrawDebugData();
+        
+        //b2Vec2 position = body->GetPosition();
+        //float32 angle = body->GetAngle();
         //printf("%4.2f %4.2f %4.2f\n", position.x, position.y, angle);
-
-        
+       
         window->Display();
     }
     
+    delete world;
     return 0;
 }
 

@@ -26,6 +26,8 @@
 DebugDraw::DebugDraw(sf::RenderWindow *renderWindow)
 {
 	window = renderWindow;
+        width = window->GetWidth();
+        height = window->GetHeight();
         printf("Constructeur debugdraw");
 }
 
@@ -38,45 +40,45 @@ sf::Color DebugDraw::B2SFColor(const b2Color &color)
 
 void DebugDraw::DrawPolygon(const b2Vec2* vertices, int32 vertexCount, const b2Color& color)
 {
-        printf("coucou");
-	sf::ConvexShape polygon;
+	sf::ConvexShape polygon(vertexCount);
 	for (int32 i=0; i<vertexCount; i++)
 	{
 		b2Vec2 vertex = vertices[i];
-		sf::Vector2f coord(vertex.x,vertex.y);
+		sf::Vector2f coord(vertex.x*100,height-vertex.y*100);
 		polygon.SetPoint(i,coord);
 	}
+        polygon.SetFillColor(sf::Color::Red);
 	window->Draw(polygon);
 }
 
 void DebugDraw::DrawSolidPolygon(const b2Vec2* vertices, int32 vertexCount, const b2Color& color)
 {
-        printf("coucou");
-	sf::ConvexShape polygon;
+	sf::ConvexShape polygon(vertexCount);
 	for (int32 i=0; i<vertexCount; i++)
 	{
 		b2Vec2 vertex = vertices[i];
-		sf::Vector2f coord(vertex.x,vertex.y);
+		sf::Vector2f coord(vertex.x*100,height-vertex.y*100);
 		polygon.SetPoint(i,coord);
 	}
+        polygon.SetFillColor(sf::Color::Red);
 	window->Draw(polygon);
 }
 
 void DebugDraw::DrawCircle(const b2Vec2& center, float32 radius, const b2Color& color)
 {
-        printf("coucou");
 	sf::CircleShape circle(radius);
-	sf::Vector2f coord(center.x,center.y);
+	sf::Vector2f coord(center.x*100,height-center.y*100);
 	circle.SetPosition(coord);
+        circle.SetFillColor(sf::Color::Red);
 	window->Draw(circle);
 }
 
 void DebugDraw::DrawSolidCircle(const b2Vec2& center, float32 radius, const b2Vec2& axis, const b2Color& color)
 {
-        printf("coucou");
 	sf::CircleShape circle(radius);
-	sf::Vector2f coord(center.x,center.y);
+	sf::Vector2f coord(center.x*100,height-center.y*100);
 	circle.SetPosition(coord);
+        circle.SetFillColor(sf::Color::Red);
 	window->Draw(circle);
 }
 
