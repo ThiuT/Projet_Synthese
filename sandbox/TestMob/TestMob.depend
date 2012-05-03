@@ -1,0 +1,45 @@
+# depslib dependency file v1.0
+1333980546 source:/home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestBen2/DebugDraw.cpp
+	"DebugDraw.h"
+
+1333979190 /home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestBen2/DebugDraw.h
+	<stdio.h>
+	<Box2D/Box2D.h>
+	<SFML/Graphics.hpp>
+	<SFML/Window.hpp>
+
+1336059093 source:/home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Main.cpp
+	<stdio.h>
+	<Box2D/Box2D.h>
+	<SFML/Graphics.hpp>
+	<SFML/Window.hpp>
+	"DebugDraw.h"
+	"Mob.hpp"
+
+1336058518 /home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Mob.hpp
+	<SFML/Graphics.hpp>
+	<SFML/Window.hpp>
+	<Box2D/Box2D.h>
+	<stdio.h>
+
+1336058938 source:/home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Mob.cpp
+	"Mob.hpp"
+
+1335629126 source:/home/thiut/Documents/ESIL/Projet_Synthese/sandbox/PremiersTestsBen/DebugDraw.cpp
+	"DebugDraw.h"
+
+1335628932 /home/thiut/Documents/ESIL/Projet_Synthese/sandbox/PremiersTestsBen/DebugDraw.h
+	<stdio.h>
+	<Box2D/Box2D.h>
+	<SFML/Graphics.hpp>
+	<SFML/Window.hpp>
+
+1336058871 source:/home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/DebugDraw.cpp
+	"DebugDraw.h"
+
+1335628932 /home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/DebugDraw.h
+	<stdio.h>
+	<Box2D/Box2D.h>
+	<SFML/Graphics.hpp>
+	<SFML/Window.hpp>
+
