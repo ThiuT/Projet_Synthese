@@ -49,6 +49,11 @@ int main(int argc, char** argv) {
             if(sfmlEvent.Type == sf::Event::Closed) window->Close();
         }
 
+        if(sf::Keyboard::IsKeyPressed(sf::Keyboard::Left))
+            mob.Move(Mob::LEFT);
+        if(sf::Keyboard::IsKeyPressed(sf::Keyboard::Right))
+            mob.Move(Mob::RIGHT);
+
         world.Step(timestep,velocityIterations,positionIterations);
 
         world.DrawDebugData();

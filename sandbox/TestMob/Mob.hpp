@@ -9,8 +9,13 @@
 class Mob
 {
     public:
+        static const int LEFT = -1;
+        static const int RIGHT = 1;
+        static const int STOP = 0;
+
         Mob(b2World*,float32,float32);
         void Render(sf::RenderWindow*);
+        void Move(int dir);
 
     private:
         b2BodyDef bodydef;
@@ -20,6 +25,7 @@ class Mob
 
         sf::Texture texture;
         sf::Sprite sprite;
+
 };
 
 #endif // MOB_HPP_INCLUDED

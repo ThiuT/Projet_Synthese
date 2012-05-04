@@ -8,12 +8,12 @@
 		<Cursor position="0" topLine="3" />
 	</File>
 	<File name="Main.cpp" open="1" top="0" tabpos="1">
-		<Cursor position="585" topLine="12" />
+		<Cursor position="1794" topLine="30" />
 	</File>
 	<File name="Mob.cpp" open="1" top="1" tabpos="2">
-		<Cursor position="564" topLine="2" />
+		<Cursor position="1048" topLine="11" />
 	</File>
 	<File name="Mob.hpp" open="1" top="0" tabpos="3">
-		<Cursor position="152" topLine="0" />
+		<Cursor position="285" topLine="2" />
 	</File>
 </CodeBlocks_layout_file>
