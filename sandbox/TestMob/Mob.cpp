@@ -6,7 +6,7 @@ Mob::Mob(b2World* world,float32 x,float32 y)
     sprite.SetTexture(texture);
     sprite.SetTextureRect(sf::IntRect(5,82,13,26));
     sprite.SetOrigin(sprite.GetLocalBounds().Width/2.0f,sprite.GetLocalBounds().Height/2.0f);
-    sprite.Scale(-1,1);
+    sprite.SetScale(-1,1);
 
     // Definition d'un corps dynamique à la position initiale x,y
     bodydef.type = b2_dynamicBody;
@@ -22,6 +22,8 @@ Mob::Mob(b2World* world,float32 x,float32 y)
     fixturedef.density = 1.0f;
     fixturedef.friction = 2.0f;
     body->CreateFixture(&fixturedef);
+
+    isMoving = false;
 }
 
 void Mob::Render(sf::RenderWindow* window)
@@ -32,5 +34,20 @@ void Mob::Render(sf::RenderWindow* window)
 
 void Mob::Move(int dir)
 {
-    body->SetLinearVelocity(b2Vec2(0.3f*dir,0.0f));
+    b2Vec2 vel = body->GetLinearVelocity();
+    vel.x = 0.3f*dir;
+    body->SetLinearVelocity(vel);
+    sprite.SetScale(-dir,1);
+}
+
+void Mob::Jump()
+{
+    if(IsOnGround()) body->ApplyLinearImpulse(b2Vec2(0.0f,0.02f),body->GetLocalCenter());
+}
+
+bool Mob::IsOnGround()
+{
+    b2Vec2 vel = body->GetLinearVelocity();
+    if(vel.y == 0.0f) return true;
+    return false;
 }

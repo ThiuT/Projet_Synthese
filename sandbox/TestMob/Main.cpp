@@ -9,6 +9,7 @@ int main(int argc, char** argv) {
 
     // Création d'une fenêtre SFML de 800*600px et 32bits par pixel
     sf::RenderWindow* window = new sf::RenderWindow(sf::VideoMode(800,600,32),"Test");
+    window->EnableKeyRepeat(false);
     // Attribution d'une position fixe à la fenêtre
     window->SetPosition(74,155);
     // Création d'un gestionnaire d'évennements SFML
@@ -47,6 +48,15 @@ int main(int argc, char** argv) {
         // Traitement des événements
         while(window->PollEvent(sfmlEvent)) {
             if(sfmlEvent.Type == sf::Event::Closed) window->Close();
+            if(sfmlEvent.Type == sf::Event::KeyPressed) {
+                switch(sfmlEvent.Key.Code) {
+                    case sf::Keyboard::Up:
+                        mob.Jump();
+                        break;
+                    default:
+                        break;
+                }
+            }
         }
 
         if(sf::Keyboard::IsKeyPressed(sf::Keyboard::Left))

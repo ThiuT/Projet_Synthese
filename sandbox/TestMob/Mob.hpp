@@ -16,6 +16,8 @@ class Mob
         Mob(b2World*,float32,float32);
         void Render(sf::RenderWindow*);
         void Move(int dir);
+        void Jump();
+        bool IsOnGround();
 
     private:
         b2BodyDef bodydef;
@@ -25,6 +27,8 @@ class Mob
 
         sf::Texture texture;
         sf::Sprite sprite;
+
+        bool isMoving;
 
 };
 
