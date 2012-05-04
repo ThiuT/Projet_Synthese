@@ -7,13 +7,13 @@
 	<File name="DebugDraw.h" open="1" top="0" tabpos="5">
 		<Cursor position="0" topLine="3" />
 	</File>
-	<File name="Main.cpp" open="1" top="0" tabpos="1">
-		<Cursor position="624" topLine="15" />
+	<File name="Main.cpp" open="1" top="1" tabpos="1">
+		<Cursor position="1407" topLine="33" />
 	</File>
-	<File name="Mob.cpp" open="1" top="1" tabpos="2">
-		<Cursor position="1278" topLine="28" />
+	<File name="Mob.cpp" open="1" top="0" tabpos="2">
+		<Cursor position="1257" topLine="23" />
 	</File>
 	<File name="Mob.hpp" open="1" top="0" tabpos="3">
-		<Cursor position="429" topLine="8" />
+		<Cursor position="646" topLine="9" />
 	</File>
 </CodeBlocks_layout_file>

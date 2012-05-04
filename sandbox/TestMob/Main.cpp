@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <time.h>
 #include <Box2D/Box2D.h>
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
@@ -16,7 +17,7 @@ int main(int argc, char** argv) {
     sf::Event sfmlEvent;
 
     // Définition des propriétés d'un monde Box2D
-    b2Vec2 gravity(0.0f, -0.2f);
+    b2Vec2 gravity(0.0f, -0.98f);
     int32 velocityIterations = 6;
     int32 positionIterations = 2;
     float32 timestep = 1.0f/60.0f; // = 60Hz
@@ -70,6 +71,7 @@ int main(int argc, char** argv) {
         mob.Render(window);
 
         window->Display();
+        usleep(3000);
     }
 
     return 0;

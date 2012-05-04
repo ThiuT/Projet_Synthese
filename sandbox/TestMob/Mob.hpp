@@ -29,7 +29,6 @@ class Mob
         sf::Sprite sprite;
 
         bool isMoving;
-
 };
 
 #endif // MOB_HPP_INCLUDED

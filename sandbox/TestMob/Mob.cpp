@@ -42,7 +42,8 @@ void Mob::Move(int dir)
 
 void Mob::Jump()
 {
-    if(IsOnGround()) body->ApplyLinearImpulse(b2Vec2(0.0f,0.02f),body->GetLocalCenter());
+    if(IsOnGround())
+        body->ApplyLinearImpulse(b2Vec2(0.0f,0.05f),body->GetLocalCenter());
 }
 
 bool Mob::IsOnGround()
