@@ -46,7 +46,7 @@ void DebugDraw::DrawPolygon(const b2Vec2* vertices, int32 vertexCount, const b2C
 		sf::Vector2f coord(vertex.x*100,height-vertex.y*100);
 		polygon.SetPoint(i,coord);
 	}
-        polygon.SetFillColor(sf::Color::Red);
+        polygon.SetFillColor(B2SFColor(color));
 	window->Draw(polygon);
 }
 
@@ -59,7 +59,7 @@ void DebugDraw::DrawSolidPolygon(const b2Vec2* vertices, int32 vertexCount, cons
 		sf::Vector2f coord(vertex.x*100,height-vertex.y*100);
 		polygon.SetPoint(i,coord);
 	}
-        polygon.SetFillColor(sf::Color::Red);
+        polygon.SetFillColor(B2SFColor(color));
 	window->Draw(polygon);
 }
 

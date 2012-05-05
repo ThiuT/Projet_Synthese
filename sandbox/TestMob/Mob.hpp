@@ -5,6 +5,9 @@
 #include <SFML/Window.hpp>
 #include <Box2D/Box2D.h>
 #include <stdio.h>
+#include <string.h>
+
+using namespace std;
 
 class Mob
 {
@@ -13,13 +16,13 @@ class Mob
         static const int RIGHT = 1;
         static const int STOP = 0;
 
-        Mob(b2World*,float32,float32);
+        Mob(b2World*,float32,float32,string,sf::IntRect);
         void Render(sf::RenderWindow*);
         void Move(int dir);
         void Jump();
         bool IsOnGround();
 
-    private:
+    protected:
         b2BodyDef bodydef;
         b2Body* body;
         b2PolygonShape box;
@@ -27,8 +30,6 @@ class Mob
 
         sf::Texture texture;
         sf::Sprite sprite;
-
-        bool isMoving;
 };
 
 #endif // MOB_HPP_INCLUDED

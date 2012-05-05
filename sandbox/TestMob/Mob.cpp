@@ -1,12 +1,11 @@
 #include "Mob.hpp"
 
-Mob::Mob(b2World* world,float32 x,float32 y)
+Mob::Mob(b2World* world,float32 x,float32 y,string texturePath,sf::IntRect subRect)
 {
-    texture.LoadFromFile("smb3-mario_sheet.png");
+    texture.LoadFromFile(texturePath);
     sprite.SetTexture(texture);
-    sprite.SetTextureRect(sf::IntRect(5,82,13,26));
+    sprite.SetTextureRect(subRect);
     sprite.SetOrigin(sprite.GetLocalBounds().Width/2.0f,sprite.GetLocalBounds().Height/2.0f);
-    sprite.SetScale(-1,1);
 
     // Definition d'un corps dynamique à la position initiale x,y
     bodydef.type = b2_dynamicBody;
@@ -22,8 +21,6 @@ Mob::Mob(b2World* world,float32 x,float32 y)
     fixturedef.density = 1.0f;
     fixturedef.friction = 2.0f;
     body->CreateFixture(&fixturedef);
-
-    isMoving = false;
 }
 
 void Mob::Render(sf::RenderWindow* window)

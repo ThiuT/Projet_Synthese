@@ -53,8 +53,14 @@
 			<Add library="/usr/local/lib/libsfml-system.so" />
 			<Add library="/usr/local/lib/libsfml-window.so" />
 		</Linker>
+		<Unit filename="Character.cpp" />
+		<Unit filename="Character.hpp" />
 		<Unit filename="DebugDraw.cpp" />
 		<Unit filename="DebugDraw.h" />
+		<Unit filename="Enemy.cpp" />
+		<Unit filename="Enemy.hpp" />
+		<Unit filename="Game.cpp" />
+		<Unit filename="Game.hpp" />
 		<Unit filename="Main.cpp" />
 		<Unit filename="Mob.cpp" />
 		<Unit filename="Mob.hpp" />

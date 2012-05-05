@@ -8,22 +8,17 @@
 	<SFML/Graphics.hpp>
 	<SFML/Window.hpp>
 
-1336140012 source:/home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Main.cpp
-	<stdio.h>
-	<time.h>
-	<Box2D/Box2D.h>
-	<SFML/Graphics.hpp>
-	<SFML/Window.hpp>
-	"DebugDraw.h"
-	"Mob.hpp"
+1336232789 source:/home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Main.cpp
+	"Game.hpp"
 
-1336140028 /home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Mob.hpp
+1336227424 /home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Mob.hpp
 	<SFML/Graphics.hpp>
 	<SFML/Window.hpp>
 	<Box2D/Box2D.h>
 	<stdio.h>
+	<string.h>
 
-1336140080 source:/home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Mob.cpp
+1336229612 source:/home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Mob.cpp
 	"Mob.hpp"
 
 1335629126 source:/home/thiut/Documents/ESIL/Projet_Synthese/sandbox/PremiersTestsBen/DebugDraw.cpp
@@ -35,7 +30,7 @@
 	<SFML/Graphics.hpp>
 	<SFML/Window.hpp>
 
-1336058871 source:/home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/DebugDraw.cpp
+1336226508 source:/home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/DebugDraw.cpp
 	"DebugDraw.h"
 
 1335628932 /home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/DebugDraw.h
@@ -43,4 +38,30 @@
 	<Box2D/Box2D.h>
 	<SFML/Graphics.hpp>
 	<SFML/Window.hpp>
+
+1336227636 source:/home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Character.cpp
+	"Character.hpp"
+
+1336227583 /home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Character.hpp
+	"Mob.hpp"
+
+1336229829 source:/home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Enemy.cpp
+	"Enemy.hpp"
+
+1336229783 /home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Enemy.hpp
+	"Mob.hpp"
+
+1336232747 source:/home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Game.cpp
+	"Game.hpp"
+
+1336232656 /home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Game.hpp
+	<SFML/Graphics.hpp>
+	<SFML/Window.hpp>
+	<Box2D/Box2D.h>
+	<stdio.h>
+	<string.h>
+	"DebugDraw.h"
+	"Mob.hpp"
+	"Character.hpp"
+	"Enemy.hpp"
 
