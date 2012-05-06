@@ -41,10 +41,17 @@ void Game::Initialize()
     debugDraw = new DebugDraw(window);
     debugDraw->AppendFlags(b2Draw::e_shapeBit);
     world->SetDebugDraw(debugDraw);
+
+    // Création d'un gestionnaire de collisions
+    cMng = new CollisionManager(world);
 }
 
 void Game::Run()
 {
+    // Lancement du thread de gestion des collisions
+    sf::Thread collisionThread(cMng->Run);
+    collisionThread.Launch();
+
     // Boucle principale : tant que la fenêtre est ouverte
     while(window->IsOpen()) {
         window->Clear();
@@ -77,4 +84,6 @@ void Game::Run()
         window->Display();
         usleep(3000);
     }
+    // Fin de boucle
+    collisionThread.Terminate();
 }

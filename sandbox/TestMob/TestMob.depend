@@ -51,10 +51,10 @@
 1336229783 /home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Enemy.hpp
 	"Mob.hpp"
 
-1336232747 source:/home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Game.cpp
+1336314248 source:/home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Game.cpp
 	"Game.hpp"
 
-1336232656 /home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Game.hpp
+1336313425 /home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Game.hpp
 	<SFML/Graphics.hpp>
 	<SFML/Window.hpp>
 	<Box2D/Box2D.h>
@@ -64,4 +64,11 @@
 	"Mob.hpp"
 	"Character.hpp"
 	"Enemy.hpp"
+	"CollisionManager.hpp"
+
+1336314431 /home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/CollisionManager.hpp
+	<Box2D/Box2D.h>
+
+1336314141 source:/home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/CollisionManager.cpp
+	"CollisionManager.hpp"
 

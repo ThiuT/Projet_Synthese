@@ -10,6 +10,7 @@
 #include "Mob.hpp"
 #include "Character.hpp"
 #include "Enemy.hpp"
+#include "CollisionManager.hpp"
 
 class Game {
 
@@ -24,6 +25,9 @@ class Game {
         int32 velocityIterations;
         int32 positionIterations;
         float32 timeStep;
+
+        // Gesionnaire de collisions
+        CollisionManager* cMng;
 
         // Listes
         Character* player;

@@ -55,6 +55,8 @@
 		</Linker>
 		<Unit filename="Character.cpp" />
 		<Unit filename="Character.hpp" />
+		<Unit filename="CollisionManager.cpp" />
+		<Unit filename="CollisionManager.hpp" />
 		<Unit filename="DebugDraw.cpp" />
 		<Unit filename="DebugDraw.h" />
 		<Unit filename="Enemy.cpp" />
