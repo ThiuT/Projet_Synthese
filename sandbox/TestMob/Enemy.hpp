@@ -7,6 +7,7 @@ class Enemy : public Mob
 {
     public:
         Enemy(b2World*,float32,float32);
+        ~Enemy();
 };
 
 

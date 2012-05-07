@@ -19,10 +19,16 @@ class Mob
         Mob(b2World*,float32,float32,string,sf::IntRect);
         void Render(sf::RenderWindow*);
         void Move(int dir);
-        void Jump();
+        void Jump(b2Vec2 vec,bool force=false);
         bool IsOnGround();
+        int GetID();
+        bool IsDead();
+        void SetDead(bool);
+        ~Mob();
 
     protected:
+        b2World* world;
+
         b2BodyDef bodydef;
         b2Body* body;
         b2PolygonShape box;
@@ -30,6 +36,9 @@ class Mob
 
         sf::Texture texture;
         sf::Sprite sprite;
+
+        int ID;
+        bool dead;
 };
 
 #endif // MOB_HPP_INCLUDED

@@ -34,7 +34,7 @@ void Game::Initialize()
 
     // Création d'un mob
     player = new Character(world,1.0f,4.0f);
-    mobs.insert(mobs.end(), new Enemy (world,5.0f,3.0f));
+    mobs.push_back(new Enemy (world,5.0f,3.0f));
 
     // Création et assignation d'un renderer pour les objets Box2D
     DebugDraw* debugDraw;
@@ -42,16 +42,12 @@ void Game::Initialize()
     debugDraw->AppendFlags(b2Draw::e_shapeBit);
     world->SetDebugDraw(debugDraw);
 
-    // Création d'un gestionnaire de collisions
-    cMng = new CollisionManager(world);
+    // Assignation d'un gestionnaire de collision
+    world->SetContactListener(new CollisionManager());
 }
 
 void Game::Run()
 {
-    // Lancement du thread de gestion des collisions
-    sf::Thread collisionThread(cMng->Run);
-    collisionThread.Launch();
-
     // Boucle principale : tant que la fenêtre est ouverte
     while(window->IsOpen()) {
         window->Clear();
@@ -61,7 +57,7 @@ void Game::Run()
             if(sfmlEvent.Type == sf::Event::KeyPressed) {
                 switch(sfmlEvent.Key.Code) {
                     case sf::Keyboard::Up:
-                        player->Jump();
+                        player->Jump(b2Vec2(0.0f,0.05f));
                         break;
                     default:
                         break;
@@ -78,12 +74,23 @@ void Game::Run()
 
         world->DrawDebugData();
         player->Render(window);
-        for (std::vector<Enemy*>::iterator mobsIterator = mobs.begin(); mobsIterator != mobs.end(); mobsIterator++)
-            (*mobsIterator)->Render(window);
+
+        std::vector<Enemy*>::iterator mobsIterator = mobs.begin();
+        while(mobsIterator != mobs.end()) {
+            if((*mobsIterator)->IsDead()) {
+                Enemy* dyingEnemy = *mobsIterator;
+                delete dyingEnemy;
+                mobsIterator = mobs.erase(mobsIterator);
+            }
+            else {
+                (*mobsIterator)->Render(window);
+                mobsIterator++;
+            }
+        }
+
 
         window->Display();
         usleep(3000);
     }
-    // Fin de boucle
-    collisionThread.Terminate();
+
 }

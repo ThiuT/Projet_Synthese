@@ -2,15 +2,16 @@
 #define COLLISIONMANAGER_HPP_INCLUDED
 
 #include <Box2D/Box2D.h>
+#include "Mob.hpp"
 
-class CollisionManager
+class CollisionManager : public b2ContactListener
 {
     private:
-        b2World* world;
+        b2WorldManifold manifold;
 
     public:
-        CollisionManager(b2World*);
-        static void Run();
+        CollisionManager();
+        void BeginContact(b2Contact* contact);
 };
 
 #endif // COLLISIONMANAGER_HPP_INCLUDED

@@ -21,6 +21,8 @@ Mob::Mob(b2World* world,float32 x,float32 y,string texturePath,sf::IntRect subRe
     fixturedef.density = 1.0f;
     fixturedef.friction = 2.0f;
     body->CreateFixture(&fixturedef);
+
+    dead = false;
 }
 
 void Mob::Render(sf::RenderWindow* window)
@@ -37,10 +39,12 @@ void Mob::Move(int dir)
     sprite.SetScale(-dir,1);
 }
 
-void Mob::Jump()
+void Mob::Jump(b2Vec2 vec,bool force)
 {
-    if(IsOnGround())
-        body->ApplyLinearImpulse(b2Vec2(0.0f,0.05f),body->GetLocalCenter());
+    if(force)
+        body->ApplyLinearImpulse(vec,body->GetLocalCenter());
+    else if(IsOnGround())
+        body->ApplyLinearImpulse(vec,body->GetLocalCenter());
 }
 
 bool Mob::IsOnGround()
@@ -48,4 +52,24 @@ bool Mob::IsOnGround()
     b2Vec2 vel = body->GetLinearVelocity();
     if(vel.y == 0.0f) return true;
     return false;
+}
+
+int Mob::GetID()
+{
+    return(ID);
+}
+
+bool Mob::IsDead()
+{
+    return dead;
+}
+
+void Mob::SetDead(bool d)
+{
+    dead = d;
+}
+
+Mob::~Mob() {
+    printf("Mort\n");
+    body->GetWorld()->DestroyBody(body);
 }
