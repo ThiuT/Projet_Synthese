@@ -11,7 +11,7 @@ void CollisionManager::BeginContact(b2Contact* contact)
     Mob* mobB = static_cast<Mob*>(contact->GetFixtureB()->GetBody()->GetUserData());
 
     // En cas de contact entre le personnage et un ennemi
-    if(mobA && mobB && mobA->GetID()==1 && mobB->GetID()==2) {
+    if(mobA && mobB && mobA->GetID()==Mob::CHARACTER && mobB->GetID()==Mob::ENEMY) {
         printf("Character contacts an enemy\n");
         contact->GetWorldManifold(&manifold);
         printf("Collision normal : (%f;%f)\n",manifold.normal.x,manifold.normal.y);

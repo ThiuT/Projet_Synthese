@@ -34,6 +34,7 @@ void Game::Initialize()
 
     // Création d'un mob
     player = new Character(world,1.0f,4.0f);
+    mobs.push_back(player);
     mobs.push_back(new Enemy (world,5.0f,3.0f));
 
     // Création et assignation d'un renderer pour les objets Box2D
@@ -65,20 +66,23 @@ void Game::Run()
             }
         }
 
+        // Traitement des entrées clavier autres que évennements
         if(sf::Keyboard::IsKeyPressed(sf::Keyboard::Left))
             player->Move(Mob::LEFT);
         if(sf::Keyboard::IsKeyPressed(sf::Keyboard::Right))
             player->Move(Mob::RIGHT);
 
+        // Itération dans le monde
         world->Step(timeStep,velocityIterations,positionIterations);
 
+        // Dessin des hitbox
         world->DrawDebugData();
-        player->Render(window);
 
-        std::vector<Enemy*>::iterator mobsIterator = mobs.begin();
+        // Parcours de la liste des mobs, effacement des morts, affichage des vivants
+        std::vector<Mob*>::iterator mobsIterator = mobs.begin();
         while(mobsIterator != mobs.end()) {
             if((*mobsIterator)->IsDead()) {
-                Enemy* dyingEnemy = *mobsIterator;
+                Mob* dyingEnemy = *mobsIterator;
                 delete dyingEnemy;
                 mobsIterator = mobs.erase(mobsIterator);
             }

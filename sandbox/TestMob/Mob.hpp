@@ -5,16 +5,24 @@
 #include <SFML/Window.hpp>
 #include <Box2D/Box2D.h>
 #include <stdio.h>
-#include <string.h>
+#include <string>
 
 using namespace std;
 
 class Mob
 {
     public:
+        // Directions
         static const int LEFT = -1;
         static const int RIGHT = 1;
         static const int STOP = 0;
+
+        // Permissions
+        static const int CLIMB = 0x01;
+
+        // Identifiants de type
+        static const int CHARACTER = 1;
+        static const int ENEMY = 2;
 
         Mob(b2World*,float32,float32,string,sf::IntRect);
         void Render(sf::RenderWindow*);

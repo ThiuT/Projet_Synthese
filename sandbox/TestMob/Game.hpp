@@ -31,7 +31,7 @@ class Game {
 
         // Listes
         Character* player;
-        std::vector<Enemy*> mobs;
+        std::vector<Mob*> mobs;
 
     public:
         Game();
