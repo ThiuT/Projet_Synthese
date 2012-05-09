@@ -18,7 +18,7 @@ void CollisionManager::BeginContact(b2Contact* contact)
         // En cas de collision vers le bas (sur la tête du mob)
         if(manifold.normal.y<0) {
             mobA->Jump(b2Vec2(0.0f,0.07f),true);
-            mobB->SetDead(true);
+            mobB->Destroy();
         }
     }
 }

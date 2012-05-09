@@ -24,13 +24,8 @@ void Game::Initialize()
     world = new b2World(gravity);
     world->SetAllowSleeping(true);
 
-    // Création du "plancher"
-    b2BodyDef groundBodyDef;
-    groundBodyDef.position.Set(4.0f, 0.0f);
-    b2Body* groundBody = world->CreateBody(&groundBodyDef);
-    b2PolygonShape groundBox;
-    groundBox.SetAsBox(5.0f, 0.5f);
-    groundBody->CreateFixture(&groundBox, 0.0f);
+    // Création du niveau
+    CreateLevel();
 
     // Création d'un mob
     player = new Character(world,1.0f,4.0f);
@@ -45,6 +40,28 @@ void Game::Initialize()
 
     // Assignation d'un gestionnaire de collision
     world->SetContactListener(new CollisionManager());
+}
+
+void Game::CreateLevel()
+{
+    // Création du "plancher"
+    b2BodyDef groundBodyDef;
+    groundBodyDef.position.Set(4.0f, 0.0f);
+    b2Body* groundBody = world->CreateBody(&groundBodyDef);
+    b2PolygonShape groundBox;
+    groundBox.SetAsBox(5.0f, 0.5f);
+    groundBody->CreateFixture(&groundBox, 0.0f);
+
+    // Création d'une plate forme
+    b2BodyDef platformDef;
+    platformDef.position.Set(4.5f,1.5f);
+    b2Body* platformBody = world->CreateBody(&platformDef);
+    b2PolygonShape platformBox;
+    platformBox.SetAsBox(1.0f,0.2f);
+    b2FixtureDef platformFixtureDef;
+    platformFixtureDef.shape = &platformBox;
+    platformFixtureDef.friction = 0.0f;
+    platformBody->CreateFixture(&platformFixtureDef);
 }
 
 void Game::Run()
@@ -81,7 +98,7 @@ void Game::Run()
         // Parcours de la liste des mobs, effacement des morts, affichage des vivants
         std::vector<Mob*>::iterator mobsIterator = mobs.begin();
         while(mobsIterator != mobs.end()) {
-            if((*mobsIterator)->IsDead()) {
+            if((*mobsIterator)->IsDestroyed()) {
                 Mob* dyingEnemy = *mobsIterator;
                 delete dyingEnemy;
                 mobsIterator = mobs.erase(mobsIterator);
