@@ -45,23 +45,10 @@ void Game::Initialize()
 void Game::CreateLevel()
 {
     // Création du "plancher"
-    b2BodyDef groundBodyDef;
-    groundBodyDef.position.Set(4.0f, 0.0f);
-    b2Body* groundBody = world->CreateBody(&groundBodyDef);
-    b2PolygonShape groundBox;
-    groundBox.SetAsBox(5.0f, 0.5f);
-    groundBody->CreateFixture(&groundBox, 0.0f);
+    map.push_back(new Platform(world,4.0f,0.0f,5.0f,0.5f));
 
     // Création d'une plate forme
-    b2BodyDef platformDef;
-    platformDef.position.Set(4.5f,1.5f);
-    b2Body* platformBody = world->CreateBody(&platformDef);
-    b2PolygonShape platformBox;
-    platformBox.SetAsBox(1.0f,0.2f);
-    b2FixtureDef platformFixtureDef;
-    platformFixtureDef.shape = &platformBox;
-    platformFixtureDef.friction = 0.0f;
-    platformBody->CreateFixture(&platformFixtureDef);
+    map.push_back(new Platform(world,4.5f,1.5f,1.0f,0.2f));
 }
 
 void Game::Run()

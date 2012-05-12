@@ -59,6 +59,10 @@
 		<Unit filename="CollisionManager.hpp" />
 		<Unit filename="DebugDraw.cpp" />
 		<Unit filename="DebugDraw.h" />
+		<Unit filename="DynamicElement.cpp" />
+		<Unit filename="DynamicElement.hpp" />
+		<Unit filename="Element.cpp" />
+		<Unit filename="Element.hpp" />
 		<Unit filename="Enemy.cpp" />
 		<Unit filename="Enemy.hpp" />
 		<Unit filename="Game.cpp" />
@@ -66,6 +70,10 @@
 		<Unit filename="Main.cpp" />
 		<Unit filename="Mob.cpp" />
 		<Unit filename="Mob.hpp" />
+		<Unit filename="Platform.cpp" />
+		<Unit filename="Platform.hpp" />
+		<Unit filename="StaticElement.cpp" />
+		<Unit filename="StaticElement.hpp" />
 		<Extensions>
 			<code_completion />
 			<debugger />

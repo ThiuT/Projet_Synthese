@@ -28,13 +28,11 @@ void Mob::Jump(b2Vec2 vec,bool force)
 {
     if(force)
         body->ApplyLinearImpulse(vec,body->GetLocalCenter());
-    else if(IsOnGround())
+    else if(canJump)
         body->ApplyLinearImpulse(vec,body->GetLocalCenter());
 }
 
-bool Mob::IsOnGround()
+void Mob::AllowJump(bool allow)
 {
-    b2Vec2 vel = body->GetLinearVelocity();
-    if(vel.y == 0.0f) return true;
-    return false;
+    canJump = allow;
 }

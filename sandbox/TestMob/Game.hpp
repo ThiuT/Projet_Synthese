@@ -7,10 +7,10 @@
 #include <stdio.h>
 #include <string.h>
 #include "DebugDraw.h"
-#include "Mob.hpp"
 #include "Character.hpp"
 #include "Enemy.hpp"
 #include "CollisionManager.hpp"
+#include "Platform.hpp"
 
 class Game {
 
@@ -32,6 +32,7 @@ class Game {
         // Listes
         Character* player;
         std::vector<Mob*> mobs;
+        std::vector<StaticElement*> map;
 
     public:
         Game();

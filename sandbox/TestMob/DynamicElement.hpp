@@ -1,18 +1,13 @@
 #ifndef DYNAMICELEMENT_HPP_INCLUDED
 #define DYNAMICELEMENT_HPP_INCLUDED
 
-#include <SFML/Graphics.hpp>
-#include <SFML/Window.hpp>
-#include <Box2D/Box2D.h>
-#include <stdio.h>
-#include <string>
+#include "Element.hpp"
 
-class DynamicElement
+class DynamicElement : public Element
 {
     public:
         DynamicElement(b2World*,float32,float32,bool);
         void Render(sf::RenderWindow*);
-        int GetID();
         bool IsDestroyed();
         void Destroy();
         ~DynamicElement();
@@ -28,7 +23,6 @@ class DynamicElement
         sf::Texture texture;
         sf::Sprite sprite;
 
-        int ID;
         bool destroyed;
 };
 

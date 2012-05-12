@@ -19,11 +19,6 @@ void DynamicElement::Render(sf::RenderWindow* window)
     window->Draw(sprite);
 }
 
-int DynamicElement::GetID()
-{
-    return(ID);
-}
-
 bool DynamicElement::IsDestroyed()
 {
     return destroyed;

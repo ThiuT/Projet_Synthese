@@ -3,6 +3,8 @@
 
 #include <Box2D/Box2D.h>
 #include "Mob.hpp"
+#include <stdio.h>
+#include <string>
 
 class CollisionManager : public b2ContactListener
 {
@@ -12,6 +14,8 @@ class CollisionManager : public b2ContactListener
     public:
         CollisionManager();
         void BeginContact(b2Contact* contact);
+        void EndContact(b2Contact* contact);
+        void PreSolve(b2Contact* contact, const b2Manifold* oldManifold);
 };
 
 #endif // COLLISIONMANAGER_HPP_INCLUDED
