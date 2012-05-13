@@ -11,10 +11,10 @@
 1336232789 source:/home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Main.cpp
 	"Game.hpp"
 
-1336923310 /home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Mob.hpp
+1336929877 /home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Mob.hpp
 	"DynamicElement.hpp"
 
-1336921369 source:/home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Mob.cpp
+1336929925 source:/home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Mob.cpp
 	"Mob.hpp"
 
 1335629126 source:/home/thiut/Documents/ESIL/Projet_Synthese/sandbox/PremiersTestsBen/DebugDraw.cpp
@@ -47,7 +47,7 @@
 1336418794 /home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Enemy.hpp
 	"Mob.hpp"
 
-1336920677 source:/home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Game.cpp
+1336930169 source:/home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Game.cpp
 	"Game.hpp"
 
 1336916879 /home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Game.hpp
@@ -63,13 +63,14 @@
 	"Platform.hpp"
 	"InteractiveDecor.hpp"
 
-1336912545 /home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/CollisionManager.hpp
+1336929793 /home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/CollisionManager.hpp
 	<Box2D/Box2D.h>
 	"Mob.hpp"
+	"Platform.hpp"
 	<stdio.h>
 	<string>
 
-1336921571 source:/home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/CollisionManager.cpp
+1336930137 source:/home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/CollisionManager.cpp
 	"CollisionManager.hpp"
 
 1336830119 /home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/DynamicElement.hpp
@@ -78,19 +79,19 @@
 1336830127 source:/home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/DynamicElement.cpp
 	"DynamicElement.hpp"
 
-1336830074 source:/home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/StaticElement.cpp
+1336929444 source:/home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/StaticElement.cpp
 	"StaticElement.hpp"
 
-1336829361 /home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Platform.hpp
+1336929997 /home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Platform.hpp
 	"StaticElement.hpp"
 
-1336830086 /home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/StaticElement.hpp
+1336929986 /home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/StaticElement.hpp
 	"Element.hpp"
 
-1336830333 source:/home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Platform.cpp
+1336930184 source:/home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Platform.cpp
 	"Platform.hpp"
 
-1336830281 /home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Element.hpp
+1336929063 /home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Element.hpp
 	<SFML/Graphics.hpp>
 	<SFML/Window.hpp>
 	<Box2D/Box2D.h>

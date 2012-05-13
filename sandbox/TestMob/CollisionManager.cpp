@@ -36,6 +36,7 @@ void CollisionManager::BeginContact(b2Contact* contact)
     else if(idA.compare("LADDER")==0 && idB.compare("CHARACTER")==0) {
         Mob* mobB = static_cast<Mob*>(elemB);
         mobB->AllowClimb(true);
+        contact->GetFixtureB()->GetBody()->SetGravityScale(0);
     }
 }
 
@@ -70,12 +71,27 @@ void CollisionManager::PreSolve(b2Contact* contact, const b2Manifold* oldManifol
     std::string idB = elemB->GetID();
 
     // En cas de collision entre le personnage et une plate-forme
-    if(elemA && elemB && idA.compare("PLATFORM")==0 && idB.compare("CHARACTER")==0) {
+    if(elemA && elemB && (idA.compare("PLATFORM")==0 || idA.compare("CLOUD")==0) && idB.compare("CHARACTER")==0) {
+
         contact->GetWorldManifold(&manifold);
+        Platform* platA = static_cast<Platform*>(elemA);
+        Mob* mobB = static_cast<Mob*>(elemB);
+
+        // En cas de collision sur le sommet d'une plate forme
+        if(manifold.normal.y>0)
+            mobB->AllowJump(true);
+
         // Si le personnage entre en contact avec le côté de la plate forme, la friction devient nulle
         // Le personnage glisse le long des côtés des plates-formes
         if(manifold.normal.y==0.0f)
             contact->SetFriction(0.0f);
+
+        // Si le personnage est en dessous de la plate-forme et qu'il s'agit d'un cloud, on ignore la collision
+        if(idA.compare("CLOUD")==0) {
+            float32 mob_y = contact->GetFixtureB()->GetBody()->GetPosition().y;
+            float32 platform_y = contact->GetFixtureA()->GetBody()->GetPosition().y;
+            if(mob_y-platform_y < 0) contact->SetEnabled(false);
+        }
     }
 }
 

@@ -3,6 +3,7 @@
 
 #include <Box2D/Box2D.h>
 #include "Mob.hpp"
+#include "Platform.hpp"
 #include <stdio.h>
 #include <string>
 

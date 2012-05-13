@@ -13,6 +13,7 @@ class Mob : public DynamicElement
         static const int RIGHT = 1;
         static const int UP = 1;
         static const int DOWN = -1;
+        static const int STOP = 0;
 
         Mob(b2World*,float32,float32,string,sf::IntRect);
 

@@ -67,6 +67,8 @@
 		<Unit filename="Enemy.hpp" />
 		<Unit filename="Game.cpp" />
 		<Unit filename="Game.hpp" />
+		<Unit filename="InteractiveDecor.cpp" />
+		<Unit filename="InteractiveDecor.hpp" />
 		<Unit filename="Main.cpp" />
 		<Unit filename="Mob.cpp" />
 		<Unit filename="Mob.hpp" />
