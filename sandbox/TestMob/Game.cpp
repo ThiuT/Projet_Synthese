@@ -49,6 +49,8 @@ void Game::CreateLevel()
 
     // Création d'une plate forme
     map.push_back(new Platform(world,4.5f,1.5f,1.0f,0.2f));
+
+    //map.push_back(new InteractiveDecor(world,3.0f,1.0f,0.1f,1.0f,InteractiveDecor::LADDER));
 }
 
 void Game::Run()
@@ -61,7 +63,7 @@ void Game::Run()
             if(sfmlEvent.Type == sf::Event::Closed) window->Close();
             if(sfmlEvent.Type == sf::Event::KeyPressed) {
                 switch(sfmlEvent.Key.Code) {
-                    case sf::Keyboard::Up:
+                    case sf::Keyboard::Space:
                         player->Jump(b2Vec2(0.0f,0.05f));
                         break;
                     default:
@@ -73,8 +75,14 @@ void Game::Run()
         // Traitement des entrées clavier autres que évennements
         if(sf::Keyboard::IsKeyPressed(sf::Keyboard::Left))
             player->Move(Mob::LEFT);
-        if(sf::Keyboard::IsKeyPressed(sf::Keyboard::Right))
+        else if(sf::Keyboard::IsKeyPressed(sf::Keyboard::Right))
             player->Move(Mob::RIGHT);
+
+        if(sf::Keyboard::IsKeyPressed(sf::Keyboard::Up))
+            player->Climb(Mob::UP);
+        else if(sf::Keyboard::IsKeyPressed(sf::Keyboard::Down))
+            player->Climb(Mob::DOWN);
+
 
         // Itération dans le monde
         world->Step(timeStep,velocityIterations,positionIterations);
@@ -94,6 +102,12 @@ void Game::Run()
                 (*mobsIterator)->Render(window);
                 mobsIterator++;
             }
+        }
+
+        std::vector<StaticElement*>::iterator mapIterator = map.begin();
+        while(mapIterator != map.end()) {
+            (*mapIterator)->Render(window);
+            mapIterator++;
         }
 
 

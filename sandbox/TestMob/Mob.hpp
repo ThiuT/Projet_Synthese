@@ -11,19 +11,22 @@ class Mob : public DynamicElement
         // Directions
         static const int LEFT = -1;
         static const int RIGHT = 1;
-        static const int STOP = 0;
-
-        // Permissions
-        static const int CLIMB = 0x01;
+        static const int UP = 1;
+        static const int DOWN = -1;
 
         Mob(b2World*,float32,float32,string,sf::IntRect);
 
         void Move(int dir);
-        void Jump(b2Vec2 vec,bool force=false);
+
         void AllowJump(bool);
+        void Jump(b2Vec2 vec,bool force=false);
+
+        void AllowClimb(bool);
+        void Climb(int dir);
 
     protected:
         bool canJump;
+        bool canClimb;
 };
 
 #endif // MOB_HPP_INCLUDED

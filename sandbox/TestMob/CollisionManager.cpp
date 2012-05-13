@@ -32,6 +32,11 @@ void CollisionManager::BeginContact(b2Contact* contact)
         if(manifold.normal.y>0)
             mobB->AllowJump(true);
     }
+
+    else if(idA.compare("LADDER")==0 && idB.compare("CHARACTER")==0) {
+        Mob* mobB = static_cast<Mob*>(elemB);
+        mobB->AllowClimb(true);
+    }
 }
 
 // Callback lorsqu'un contact se termine
@@ -47,6 +52,11 @@ void CollisionManager::EndContact(b2Contact* contact)
     if(idA.compare("PLATFORM")==0 && idB.compare("CHARACTER")==0) {
         Mob* mobB = static_cast<Mob*>(elemB);
         mobB->AllowJump(false);
+    }
+    else if(idA.compare("LADDER")==0 && idB.compare("CHARACTER")==0) {
+        Mob* mobB = static_cast<Mob*>(elemB);
+        mobB->AllowClimb(false);
+        contact->GetFixtureB()->GetBody()->SetGravityScale(1);
     }
 }
 
@@ -67,4 +77,12 @@ void CollisionManager::PreSolve(b2Contact* contact, const b2Manifold* oldManifol
         if(manifold.normal.y==0.0f)
             contact->SetFriction(0.0f);
     }
+}
+
+void CollisionManager::PostSolve(b2Contact* contact, const b2ContactImpulse* impulse)
+{
+    Element* elemA = static_cast<Element*>(contact->GetFixtureA()->GetBody()->GetUserData());
+    Element* elemB = static_cast<Element*>(contact->GetFixtureB()->GetBody()->GetUserData());
+    std::string idA = elemA->GetID();
+    std::string idB = elemB->GetID();
 }

@@ -32,7 +32,21 @@ void Mob::Jump(b2Vec2 vec,bool force)
         body->ApplyLinearImpulse(vec,body->GetLocalCenter());
 }
 
+void Mob::Climb(int dir)
+{
+    if(canClimb) {
+        b2Vec2 vel = body->GetLinearVelocity();
+        vel.y = 0.3f*dir;
+        body->SetLinearVelocity(vel);
+    }
+}
+
 void Mob::AllowJump(bool allow)
 {
     canJump = allow;
+}
+
+void Mob::AllowClimb(bool allow)
+{
+    canClimb = allow;
 }

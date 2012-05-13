@@ -11,10 +11,10 @@
 1336232789 source:/home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Main.cpp
 	"Game.hpp"
 
-1336831900 /home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Mob.hpp
+1336923310 /home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Mob.hpp
 	"DynamicElement.hpp"
 
-1336831980 source:/home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Mob.cpp
+1336921369 source:/home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Mob.cpp
 	"Mob.hpp"
 
 1335629126 source:/home/thiut/Documents/ESIL/Projet_Synthese/sandbox/PremiersTestsBen/DebugDraw.cpp
@@ -47,10 +47,10 @@
 1336418794 /home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Enemy.hpp
 	"Mob.hpp"
 
-1336829689 source:/home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Game.cpp
+1336920677 source:/home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Game.cpp
 	"Game.hpp"
 
-1336829513 /home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Game.hpp
+1336916879 /home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Game.hpp
 	<SFML/Graphics.hpp>
 	<SFML/Window.hpp>
 	<Box2D/Box2D.h>
@@ -61,14 +61,15 @@
 	"Enemy.hpp"
 	"CollisionManager.hpp"
 	"Platform.hpp"
+	"InteractiveDecor.hpp"
 
-1336832096 /home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/CollisionManager.hpp
+1336912545 /home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/CollisionManager.hpp
 	<Box2D/Box2D.h>
 	"Mob.hpp"
 	<stdio.h>
 	<string>
 
-1336830261 source:/home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/CollisionManager.cpp
+1336921571 source:/home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/CollisionManager.cpp
 	"CollisionManager.hpp"
 
 1336830119 /home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/DynamicElement.hpp
@@ -98,4 +99,10 @@
 
 1336830059 source:/home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Element.cpp
 	"Element.hpp"
+
+1336916897 /home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/InteractiveDecor.hpp
+	"StaticElement.hpp"
+
+1336919716 source:/home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/InteractiveDecor.cpp
+	"InteractiveDecor.hpp"
 
