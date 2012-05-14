@@ -36,7 +36,6 @@ void CollisionManager::BeginContact(b2Contact* contact)
     else if(idA.compare("LADDER")==0 && idB.compare("CHARACTER")==0) {
         Mob* mobB = static_cast<Mob*>(elemB);
         mobB->AllowClimb(true);
-        contact->GetFixtureB()->GetBody()->SetGravityScale(0);
     }
 }
 
@@ -58,6 +57,7 @@ void CollisionManager::EndContact(b2Contact* contact)
         Mob* mobB = static_cast<Mob*>(elemB);
         mobB->AllowClimb(false);
         contact->GetFixtureB()->GetBody()->SetGravityScale(1);
+        contact->GetFixtureB()->GetBody()->SetLinearDamping(0.0f);
     }
 }
 
@@ -74,7 +74,6 @@ void CollisionManager::PreSolve(b2Contact* contact, const b2Manifold* oldManifol
     if(elemA && elemB && (idA.compare("PLATFORM")==0 || idA.compare("CLOUD")==0) && idB.compare("CHARACTER")==0) {
 
         contact->GetWorldManifold(&manifold);
-        Platform* platA = static_cast<Platform*>(elemA);
         Mob* mobB = static_cast<Mob*>(elemB);
 
         // En cas de collision sur le sommet d'une plate forme

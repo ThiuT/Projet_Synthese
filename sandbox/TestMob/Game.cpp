@@ -50,7 +50,7 @@ void Game::CreateLevel()
     // Création d'une plate forme
     map.push_back(new Platform(world,4.5f,1.5f,1.0f,0.1f,true));
 
-    //map.push_back(new InteractiveDecor(world,3.0f,1.0f,0.1f,1.0f,InteractiveDecor::LADDER));
+    map.push_back(new InteractiveDecor(world,3.0f,1.0f,0.1f,1.0f,InteractiveDecor::LADDER));
 }
 
 void Game::Run()
@@ -77,15 +77,15 @@ void Game::Run()
             player->Move(Mob::LEFT);
         else if(sf::Keyboard::IsKeyPressed(sf::Keyboard::Right))
             player->Move(Mob::RIGHT);
-        else
-            player->Move(Mob::STOP);
+        //else
+            //player->Move(Mob::STOP);
 
         if(sf::Keyboard::IsKeyPressed(sf::Keyboard::Up))
             player->Climb(Mob::UP);
         else if(sf::Keyboard::IsKeyPressed(sf::Keyboard::Down))
             player->Climb(Mob::DOWN);
-        else
-            player->Climb(Mob::STOP);
+        //else
+            //player->Climb(Mob::STOP);
 
 
         // Itération dans le monde
