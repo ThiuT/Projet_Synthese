@@ -94,6 +94,12 @@ void Game::Run()
         // Dessin des hitbox
         world->DrawDebugData();
 
+        std::vector<StaticElement*>::iterator mapIterator = map.begin();
+        while(mapIterator != map.end()) {
+            (*mapIterator)->Render(window);
+            mapIterator++;
+        }
+
         // Parcours de la liste des mobs, effacement des morts, affichage des vivants
         std::vector<Mob*>::iterator mobsIterator = mobs.begin();
         while(mobsIterator != mobs.end()) {
@@ -106,12 +112,6 @@ void Game::Run()
                 (*mobsIterator)->Render(window);
                 mobsIterator++;
             }
-        }
-
-        std::vector<StaticElement*>::iterator mapIterator = map.begin();
-        while(mapIterator != map.end()) {
-            (*mapIterator)->Render(window);
-            mapIterator++;
         }
 
 

@@ -27,6 +27,7 @@ void Mob::Move(int dir)
 void Mob::Jump(b2Vec2 vec,bool force)
 {
     body->SetLinearDamping(0.0f);
+    body->SetGravityScale(1.0f);
     AllowClimb(false);
     if(force)
         body->ApplyLinearImpulse(vec,body->GetLocalCenter());
