@@ -48,9 +48,9 @@ void Game::CreateLevel()
     map.push_back(new Platform(world,4.0f,0.0f,5.0f,0.5f,false));
 
     // Création d'une plate forme
-    map.push_back(new Platform(world,4.5f,1.5f,1.0f,0.1f,true));
+    map.push_back(new Platform(world,4.5f,2.0f,1.0f,0.1f,true));
 
-    map.push_back(new InteractiveDecor(world,3.0f,1.0f,0.1f,1.0f,InteractiveDecor::LADDER));
+    map.push_back(new InteractiveDecor(world,4.0f,1.25f,0.1f,1.5f,InteractiveDecor::LADDER));
 }
 
 void Game::Run()

@@ -84,12 +84,15 @@ void CollisionManager::PreSolve(b2Contact* contact, const b2Manifold* oldManifol
         // Le personnage glisse le long des côtés des plates-formes
         if(manifold.normal.y==0.0f)
             contact->SetFriction(0.0f);
+        else
+            contact->SetFriction(1.0f);
 
         // Si le personnage est en dessous de la plate-forme et qu'il s'agit d'un cloud, on ignore la collision
         if(idA.compare("CLOUD")==0) {
             float32 mob_y = contact->GetFixtureB()->GetBody()->GetPosition().y;
+            float32 mob_size = mobB->GetB2Height();
             float32 platform_y = contact->GetFixtureA()->GetBody()->GetPosition().y;
-            if(mob_y-platform_y < 0) contact->SetEnabled(false);
+            if(mob_y-platform_y < mob_size) contact->SetEnabled(false);
         }
     }
 }

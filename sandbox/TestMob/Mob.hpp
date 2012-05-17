@@ -25,6 +25,8 @@ class Mob : public DynamicElement
         void AllowClimb(bool);
         void Climb(int dir);
 
+        float32 GetB2Height();
+
     protected:
         bool canJump;
         bool canClimb;

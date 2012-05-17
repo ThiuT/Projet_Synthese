@@ -5,7 +5,7 @@
 		<Cursor position="170" topLine="0" />
 	</File>
 	<File name="CollisionManager.cpp" open="1" top="0" tabpos="4">
-		<Cursor position="2140" topLine="40" />
+		<Cursor position="2140" topLine="0" />
 	</File>
 	<File name="CollisionManager.hpp" open="1" top="0" tabpos="7">
 		<Cursor position="417" topLine="0" />
@@ -25,7 +25,7 @@
 	<File name="Element.cpp" open="0" top="0" tabpos="0">
 		<Cursor position="71" topLine="0" />
 	</File>
-	<File name="Element.hpp" open="0" top="0" tabpos="13">
+	<File name="Element.hpp" open="1" top="0" tabpos="10">
 		<Cursor position="238" topLine="0" />
 	</File>
 	<File name="Enemy.cpp" open="0" top="0" tabpos="7">
@@ -34,29 +34,29 @@
 	<File name="Enemy.hpp" open="0" top="0" tabpos="12">
 		<Cursor position="174" topLine="0" />
 	</File>
-	<File name="Game.cpp" open="1" top="0" tabpos="3">
-		<Cursor position="2403" topLine="55" />
+	<File name="Game.cpp" open="1" top="1" tabpos="3">
+		<Cursor position="227" topLine="0" />
 	</File>
 	<File name="Game.hpp" open="0" top="0" tabpos="4">
 		<Cursor position="331" topLine="0" />
 	</File>
 	<File name="InteractiveDecor.cpp" open="1" top="0" tabpos="6">
-		<Cursor position="610" topLine="0" />
+		<Cursor position="803" topLine="0" />
 	</File>
 	<File name="InteractiveDecor.hpp" open="1" top="0" tabpos="5">
 		<Cursor position="233" topLine="0" />
 	</File>
-	<File name="Main.cpp" open="0" top="0" tabpos="1">
+	<File name="Main.cpp" open="1" top="0" tabpos="11">
 		<Cursor position="6" topLine="0" />
 	</File>
-	<File name="Mob.cpp" open="1" top="1" tabpos="1">
-		<Cursor position="890" topLine="25" />
+	<File name="Mob.cpp" open="1" top="0" tabpos="1">
+		<Cursor position="18" topLine="0" />
 	</File>
 	<File name="Mob.hpp" open="1" top="0" tabpos="2">
 		<Cursor position="410" topLine="8" />
 	</File>
 	<File name="Platform.cpp" open="1" top="0" tabpos="8">
-		<Cursor position="405" topLine="0" />
+		<Cursor position="374" topLine="0" />
 	</File>
 	<File name="Platform.hpp" open="0" top="0" tabpos="0">
 		<Cursor position="210" topLine="0" />

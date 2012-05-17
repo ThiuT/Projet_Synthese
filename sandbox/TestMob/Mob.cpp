@@ -59,3 +59,8 @@ void Mob::AllowClimb(bool allow)
 {
     canClimb = allow;
 }
+
+float32 Mob::GetB2Height()
+{
+    return sprite.GetLocalBounds().Height/200.0f;
+}
