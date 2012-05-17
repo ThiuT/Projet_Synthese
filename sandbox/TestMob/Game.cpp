@@ -2,7 +2,8 @@
 
 Game::Game()
 {
-    this->Initialize();
+    //this->Initialize();
+    lives = 3;
 }
 
 void Game::Initialize()
@@ -118,8 +119,9 @@ int Game::Run()
         // Affichage du personnage
         if(player->IsDestroyed()) {
             delete player;
-            Terminate();
-            return 1;
+            lives--;
+            window->Close();
+            return lives;
         }
         else player->Render(window);
 

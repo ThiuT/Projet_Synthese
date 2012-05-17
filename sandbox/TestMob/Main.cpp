@@ -2,14 +2,14 @@
 
 int main(int argc, char** argv) {
 
-    Game* game;
-    int play=1;
+    Game game;
+    int play;
 
-    while(play) {
-        game = new Game();
-        play = game->Run();
+    do {
+        game.Initialize();
+        play = game.Run();
         usleep(1000000);
-    }
+    } while(play>0);
 
     return 0;
 }

@@ -35,6 +35,8 @@ class Game {
         std::vector<Enemy*> enemies;
         std::vector<StaticElement*> map;
 
+        int lives;
+
     public:
         Game();
         void Initialize();
