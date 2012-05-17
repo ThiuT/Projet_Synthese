@@ -1,6 +1,6 @@
 #include "Game.hpp"
 
-Game::Game()
+Game::Game() : mobsIA(&Game::UpdateMobs,this)
 {
     //this->Initialize();
     lives = 3;
@@ -56,6 +56,7 @@ void Game::CreateLevel()
 
 int Game::Run()
 {
+    mobsIA.Launch();
     // Boucle principale : tant que la fenêtre est ouverte
     while(window->IsOpen()) {
         window->Clear();
@@ -114,25 +115,49 @@ int Game::Run()
                 (*enemiesIterator)->Render(window);
                 enemiesIterator++;
             }
+
         }
 
         // Affichage du personnage
         if(player->IsDestroyed()) {
             delete player;
-            lives--;
-            window->Close();
-            return lives;
+            return Terminate(1);
         }
         else player->Render(window);
-
 
         window->Display();
         usleep(3000);
     }
-    return 0;
+    return Terminate(0);
 }
 
-void Game::Terminate()
+void Game::UpdateMobs()
 {
+    while(1) {
+        std::vector<Enemy*>::iterator enemiesIterator = enemies.begin();
+        while(enemiesIterator != enemies.end()) {
+            (*enemiesIterator)->IA();
+            enemiesIterator++;
+        }
+        usleep(3000);
+    }
+}
+
+int Game::Terminate(int cause)
+{
+    mobsIA.Terminate();
+    enemies.clear();
+    window->Clear();
     window->Close();
+
+    switch(cause) {
+        case 0:
+            return 0;
+        case 1:
+            lives--;
+            printf("%i lives remaining !",lives);
+            return lives;
+        default:
+            return 0;
+    }
 }

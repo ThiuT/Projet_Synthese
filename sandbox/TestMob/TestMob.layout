@@ -4,10 +4,10 @@
 	<File name="Character.cpp" open="0" top="0" tabpos="6">
 		<Cursor position="170" topLine="0" />
 	</File>
-	<File name="CollisionManager.cpp" open="1" top="0" tabpos="4">
-		<Cursor position="2140" topLine="0" />
+	<File name="CollisionManager.cpp" open="1" top="0" tabpos="5">
+		<Cursor position="3751" topLine="74" />
 	</File>
-	<File name="CollisionManager.hpp" open="1" top="0" tabpos="7">
+	<File name="CollisionManager.hpp" open="1" top="0" tabpos="6">
 		<Cursor position="417" topLine="0" />
 	</File>
 	<File name="DebugDraw.cpp" open="0" top="0" tabpos="4">
@@ -16,7 +16,7 @@
 	<File name="DebugDraw.h" open="0" top="0" tabpos="5">
 		<Cursor position="0" topLine="23" />
 	</File>
-	<File name="DynamicElement.cpp" open="1" top="0" tabpos="9">
+	<File name="DynamicElement.cpp" open="1" top="0" tabpos="7">
 		<Cursor position="271" topLine="0" />
 	</File>
 	<File name="DynamicElement.hpp" open="0" top="0" tabpos="11">
@@ -25,37 +25,37 @@
 	<File name="Element.cpp" open="0" top="0" tabpos="0">
 		<Cursor position="71" topLine="0" />
 	</File>
-	<File name="Element.hpp" open="1" top="0" tabpos="10">
+	<File name="Element.hpp" open="1" top="0" tabpos="8">
 		<Cursor position="238" topLine="0" />
 	</File>
-	<File name="Enemy.cpp" open="0" top="0" tabpos="7">
-		<Cursor position="141" topLine="0" />
+	<File name="Enemy.cpp" open="1" top="0" tabpos="11">
+		<Cursor position="454" topLine="0" />
 	</File>
-	<File name="Enemy.hpp" open="0" top="0" tabpos="12">
-		<Cursor position="174" topLine="0" />
+	<File name="Enemy.hpp" open="1" top="0" tabpos="10">
+		<Cursor position="250" topLine="0" />
 	</File>
-	<File name="Game.cpp" open="1" top="1" tabpos="3">
-		<Cursor position="227" topLine="0" />
+	<File name="Game.cpp" open="1" top="1" tabpos="4">
+		<Cursor position="4259" topLine="136" />
 	</File>
-	<File name="Game.hpp" open="0" top="0" tabpos="4">
-		<Cursor position="331" topLine="0" />
+	<File name="Game.hpp" open="1" top="0" tabpos="3">
+		<Cursor position="1019" topLine="17" />
 	</File>
-	<File name="InteractiveDecor.cpp" open="1" top="0" tabpos="6">
+	<File name="InteractiveDecor.cpp" open="0" top="0" tabpos="6">
 		<Cursor position="803" topLine="0" />
 	</File>
-	<File name="InteractiveDecor.hpp" open="1" top="0" tabpos="5">
+	<File name="InteractiveDecor.hpp" open="0" top="0" tabpos="5">
 		<Cursor position="233" topLine="0" />
 	</File>
-	<File name="Main.cpp" open="1" top="0" tabpos="11">
-		<Cursor position="6" topLine="0" />
+	<File name="Main.cpp" open="1" top="0" tabpos="9">
+		<Cursor position="166" topLine="0" />
 	</File>
 	<File name="Mob.cpp" open="1" top="0" tabpos="1">
-		<Cursor position="18" topLine="0" />
+		<Cursor position="907" topLine="41" />
 	</File>
 	<File name="Mob.hpp" open="1" top="0" tabpos="2">
-		<Cursor position="410" topLine="8" />
+		<Cursor position="611" topLine="7" />
 	</File>
-	<File name="Platform.cpp" open="1" top="0" tabpos="8">
+	<File name="Platform.cpp" open="0" top="0" tabpos="8">
 		<Cursor position="374" topLine="0" />
 	</File>
 	<File name="Platform.hpp" open="0" top="0" tabpos="0">

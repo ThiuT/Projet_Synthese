@@ -8,13 +8,11 @@ class Enemy : public Mob
     public:
         Enemy(b2World*,float32,float32);
         void IA();
-        void StartIA();
-        void StopIA();
         ~Enemy();
 
     protected:
         int iaType;
-        sf::Thread iaThread;
+        int iaTimer;
 };
 
 

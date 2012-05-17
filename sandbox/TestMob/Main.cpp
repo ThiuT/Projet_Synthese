@@ -8,7 +8,7 @@ int main(int argc, char** argv) {
     do {
         game.Initialize();
         play = game.Run();
-        usleep(1000000);
+        usleep(500000);
     } while(play>0);
 
     return 0;

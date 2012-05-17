@@ -36,13 +36,16 @@ class Game {
         std::vector<StaticElement*> map;
 
         int lives;
+        sf::Thread mobsIA;
 
     public:
         Game();
         void Initialize();
         void CreateLevel();
         int Run();
-        void Terminate();
+        void UpdateMobs();
+        int Terminate(int);
+
 };
 
 #endif // GAME_HPP_INCLUDED
