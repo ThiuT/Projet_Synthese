@@ -32,14 +32,15 @@ class Game {
 
         // Listes
         Character* player;
-        std::vector<Mob*> mobs;
+        std::vector<Enemy*> enemies;
         std::vector<StaticElement*> map;
 
     public:
         Game();
         void Initialize();
         void CreateLevel();
-        void Run();
+        int Run();
+        void Terminate();
 };
 
 #endif // GAME_HPP_INCLUDED

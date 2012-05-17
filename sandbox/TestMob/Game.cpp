@@ -29,8 +29,8 @@ void Game::Initialize()
 
     // Création d'un mob
     player = new Character(world,1.0f,4.0f);
-    mobs.push_back(player);
-    mobs.push_back(new Enemy (world,5.0f,3.0f));
+
+    enemies.push_back(new Enemy (world,5.0f,3.0f));
 
     // Création et assignation d'un renderer pour les objets Box2D
     DebugDraw* debugDraw;
@@ -53,11 +53,12 @@ void Game::CreateLevel()
     map.push_back(new InteractiveDecor(world,4.0f,1.25f,0.1f,1.5f,InteractiveDecor::LADDER));
 }
 
-void Game::Run()
+int Game::Run()
 {
     // Boucle principale : tant que la fenêtre est ouverte
     while(window->IsOpen()) {
         window->Clear();
+
         // Traitement des événements
         while(window->PollEvent(sfmlEvent)) {
             if(sfmlEvent.Type == sf::Event::Closed) window->Close();
@@ -94,6 +95,7 @@ void Game::Run()
         // Dessin des hitbox
         world->DrawDebugData();
 
+        // Affichage des plates formes
         std::vector<StaticElement*>::iterator mapIterator = map.begin();
         while(mapIterator != map.end()) {
             (*mapIterator)->Render(window);
@@ -101,22 +103,34 @@ void Game::Run()
         }
 
         // Parcours de la liste des mobs, effacement des morts, affichage des vivants
-        std::vector<Mob*>::iterator mobsIterator = mobs.begin();
-        while(mobsIterator != mobs.end()) {
-            if((*mobsIterator)->IsDestroyed()) {
-                Mob* dyingEnemy = *mobsIterator;
-                delete dyingEnemy;
-                mobsIterator = mobs.erase(mobsIterator);
+        std::vector<Enemy*>::iterator enemiesIterator = enemies.begin();
+        while(enemiesIterator != enemies.end()) {
+            if((*enemiesIterator)->IsDestroyed()) {
+                delete *enemiesIterator;
+                enemiesIterator = enemies.erase(enemiesIterator);
             }
             else {
-                (*mobsIterator)->Render(window);
-                mobsIterator++;
+                (*enemiesIterator)->Render(window);
+                enemiesIterator++;
             }
         }
+
+        // Affichage du personnage
+        if(player->IsDestroyed()) {
+            delete player;
+            Terminate();
+            return 1;
+        }
+        else player->Render(window);
 
 
         window->Display();
         usleep(3000);
     }
+    return 0;
+}
 
+void Game::Terminate()
+{
+    window->Close();
 }
