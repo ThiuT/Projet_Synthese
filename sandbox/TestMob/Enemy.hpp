@@ -6,7 +6,7 @@
 class Enemy : public Mob
 {
     public:
-        Enemy(b2World*,float32,float32);
+        Enemy(b2World*,float32,float32,string,sf::IntRect);
         void IA(b2Vec2 playerPosition);
         ~Enemy();
 

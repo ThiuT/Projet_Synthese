@@ -31,7 +31,8 @@ void Game::Initialize()
     // Création d'un mob
     player = new Character(world,1.0f,4.0f);
 
-    enemies.push_back(new Enemy (world,5.0f,3.0f));
+    enemies.push_back(new Enemy (world,5.0f,3.0f,"smb3-mario_sheet.png",sf::IntRect(5,82,13,26)));
+    enemies.push_back(new FlyingEnemy(world,4.0f,4.0f,"smb3-mario_sheet.png",sf::IntRect(154,48,16,14)));
 
     // Création et assignation d'un renderer pour les objets Box2D
     DebugDraw* debugDraw;
@@ -49,9 +50,10 @@ void Game::CreateLevel()
     map.push_back(new Platform(world,4.0f,0.0f,5.0f,0.5f,false));
 
     // Création d'une plate forme
-    map.push_back(new Platform(world,4.5f,2.0f,1.0f,0.1f,true));
+    map.push_back(new Platform(world,3.8f,2.0f,0.6f,0.1f,true));
+    map.push_back(new Platform(world,5.2f,2.0f,0.6f,0.1f,true));
 
-    map.push_back(new InteractiveDecor(world,4.0f,1.25f,0.1f,1.5f,InteractiveDecor::LADDER));
+    map.push_back(new InteractiveDecor(world,4.5f,1.3f,0.1f,1.6f,InteractiveDecor::LADDER));
 }
 
 int Game::Run()

@@ -65,6 +65,8 @@
 		<Unit filename="Element.hpp" />
 		<Unit filename="Enemy.cpp" />
 		<Unit filename="Enemy.hpp" />
+		<Unit filename="FlyingEnemy.cpp" />
+		<Unit filename="FlyingEnemy.hpp" />
 		<Unit filename="Game.cpp" />
 		<Unit filename="Game.hpp" />
 		<Unit filename="InteractiveDecor.cpp" />

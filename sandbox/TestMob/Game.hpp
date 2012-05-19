@@ -12,6 +12,7 @@
 #include "CollisionManager.hpp"
 #include "Platform.hpp"
 #include "InteractiveDecor.hpp"
+#include "FlyingEnemy.hpp"
 
 class Game {
 
