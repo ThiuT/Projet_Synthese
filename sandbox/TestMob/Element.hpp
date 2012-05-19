@@ -6,6 +6,7 @@
 #include <Box2D/Box2D.h>
 #include <stdio.h>
 #include <string>
+#include <cmath>
 
 class Element {
 

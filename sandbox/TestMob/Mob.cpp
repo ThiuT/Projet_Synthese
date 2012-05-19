@@ -16,10 +16,15 @@ Mob::Mob(b2World* world,float32 x,float32 y,string texturePath,sf::IntRect subRe
     body->CreateFixture(&fixturedef);
 }
 
-void Mob::Move(int dir)
+b2Vec2 Mob::GetPosition()
+{
+    return body->GetPosition();
+}
+
+void Mob::Move(int dir, float32 speed)
 {
     b2Vec2 vel = body->GetLinearVelocity();
-    vel.x = 0.3f*dir;
+    vel.x = speed*dir;
     body->SetLinearVelocity(vel);
     if(dir!=0) sprite.SetScale(-dir,1);
 }

@@ -77,9 +77,9 @@ int Game::Run()
 
         // Traitement des entrées clavier autres que évennements
         if(sf::Keyboard::IsKeyPressed(sf::Keyboard::Left))
-            player->Move(Mob::LEFT);
+            player->Move(Mob::LEFT,0.3f);
         else if(sf::Keyboard::IsKeyPressed(sf::Keyboard::Right))
-            player->Move(Mob::RIGHT);
+            player->Move(Mob::RIGHT,0.3f);
         //else
             //player->Move(Mob::STOP);
 
@@ -136,7 +136,7 @@ void Game::UpdateMobs()
     while(1) {
         std::vector<Enemy*>::iterator enemiesIterator = enemies.begin();
         while(enemiesIterator != enemies.end()) {
-            (*enemiesIterator)->IA();
+            (*enemiesIterator)->IA(player->GetPosition());
             enemiesIterator++;
         }
         usleep(3000);

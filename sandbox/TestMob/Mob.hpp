@@ -16,8 +16,8 @@ class Mob : public DynamicElement
         static const int STOP = 0;
 
         Mob(b2World*,float32,float32,string,sf::IntRect);
-
-        void Move(int dir);
+        b2Vec2 GetPosition();
+        void Move(int dir, float32 speed);
 
         void AllowJump(bool);
         void Jump(b2Vec2 vec,bool force=false);

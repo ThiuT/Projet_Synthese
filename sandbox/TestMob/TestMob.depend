@@ -11,10 +11,10 @@
 1337274864 source:/home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Main.cpp
 	"Game.hpp"
 
-1337259119 /home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Mob.hpp
+1337437666 /home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Mob.hpp
 	"DynamicElement.hpp"
 
-1337277077 source:/home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Mob.cpp
+1337437695 source:/home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Mob.cpp
 	"Mob.hpp"
 
 1335629126 source:/home/thiut/Documents/ESIL/Projet_Synthese/sandbox/PremiersTestsBen/DebugDraw.cpp
@@ -44,10 +44,10 @@
 1337277033 source:/home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Enemy.cpp
 	"Enemy.hpp"
 
-1337276903 /home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Enemy.hpp
+1337437611 /home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Enemy.hpp
 	"Mob.hpp"
 
-1337277660 source:/home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Game.cpp
+1337437717 source:/home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Game.cpp
 	"Game.hpp"
 
 1337276572 /home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Game.hpp
@@ -91,12 +91,13 @@
 1336930184 source:/home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Platform.cpp
 	"Platform.hpp"
 
-1336929063 /home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Element.hpp
+1337438238 /home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Element.hpp
 	<SFML/Graphics.hpp>
 	<SFML/Window.hpp>
 	<Box2D/Box2D.h>
 	<stdio.h>
 	<string>
+	<cmath>
 
 1336830059 source:/home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Element.cpp
 	"Element.hpp"
