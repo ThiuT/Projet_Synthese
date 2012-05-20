@@ -11,10 +11,10 @@
 1337274864 source:/home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Main.cpp
 	"Game.hpp"
 
-1337437666 /home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Mob.hpp
+1337530156 /home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Mob.hpp
 	"DynamicElement.hpp"
 
-1337437695 source:/home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Mob.cpp
+1337530115 source:/home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Mob.cpp
 	"Mob.hpp"
 
 1335629126 source:/home/thiut/Documents/ESIL/Projet_Synthese/sandbox/PremiersTestsBen/DebugDraw.cpp
@@ -47,7 +47,7 @@
 1337445080 /home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Enemy.hpp
 	"Mob.hpp"
 
-1337445288 source:/home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Game.cpp
+1337530237 source:/home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Game.cpp
 	"Game.hpp"
 
 1337445310 /home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Game.hpp
@@ -113,5 +113,11 @@
 	"FlyingEnemy.hpp"
 
 1337445212 /home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/FlyingEnemy.hpp
+	"Enemy.hpp"
+
+1337529025 source:/home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/TeamedEnemy.cpp
+	"TeamedEnemy.hpp"
+
+1337528819 /home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/TeamedEnemy.hpp
 	"Enemy.hpp"
 

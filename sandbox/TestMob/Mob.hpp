@@ -18,6 +18,7 @@ class Mob : public DynamicElement
         Mob(b2World*,float32,float32,string,sf::IntRect);
         b2Vec2 GetPosition();
         void Move(int dir, float32 speed);
+        void Render(sf::RenderWindow*);
 
         void AllowJump(bool);
         void Jump(b2Vec2 vec,bool force=false);
@@ -30,6 +31,7 @@ class Mob : public DynamicElement
     protected:
         bool canJump;
         bool canClimb;
+        int animationTimer;
 };
 
 #endif // MOB_HPP_INCLUDED
