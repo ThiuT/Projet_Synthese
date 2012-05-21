@@ -15,7 +15,7 @@ class Mob : public DynamicElement
         static const int DOWN = -1;
         static const int STOP = 0;
 
-        Mob(b2World*,float32,float32,string,sf::IntRect);
+        Mob(b2World*,float32,float32);
         b2Vec2 GetPosition();
         void Move(int dir, float32 speed);
         void Render(sf::RenderWindow*);

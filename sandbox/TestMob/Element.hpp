@@ -12,6 +12,14 @@ class Element {
 
     public:
         std::string GetID();
+        enum categories {
+            PLATFORM = 0x0001,
+            CHARACTER = 0x0002,
+            ENEMY = 0x0004,
+            RADAR = 0x0008,
+            INTERACTIVE = 0x0010,
+            ALL = 0x001F
+        };
 
     protected:
         std::string ID;
