@@ -20,4 +20,25 @@ Character::Character(b2World* world,float32 x,float32 y) : Mob(world,x,y)
     ID = "CHARACTER";
     body->SetUserData(this);
     sprite.SetScale(-1,1);
+
+    weapon=NULL;
+}
+
+void Character::Render(sf::RenderWindow* window)
+{
+    Mob::Render(window);
+    if(weapon) {
+        if(weapon->IsDone()) {
+            delete weapon;
+            weapon=NULL;
+        }
+        else
+            weapon->Render(window);
+    }
+}
+
+void Character::Attack(int time)
+{
+    if(!weapon)
+        weapon = new Weapon(this);
 }

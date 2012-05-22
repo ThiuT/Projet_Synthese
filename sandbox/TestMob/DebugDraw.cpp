@@ -65,19 +65,19 @@ void DebugDraw::DrawSolidPolygon(const b2Vec2* vertices, int32 vertexCount, cons
 
 void DebugDraw::DrawCircle(const b2Vec2& center, float32 radius, const b2Color& color)
 {
-	sf::CircleShape circle(radius);
+	sf::CircleShape circle(radius*100);
 	sf::Vector2f coord(center.x*100,height-center.y*100);
 	circle.SetPosition(coord);
-        circle.SetFillColor(sf::Color::Red);
+        circle.SetFillColor(B2SFColor(color));
 	window->Draw(circle);
 }
 
 void DebugDraw::DrawSolidCircle(const b2Vec2& center, float32 radius, const b2Vec2& axis, const b2Color& color)
 {
-	sf::CircleShape circle(radius);
+	sf::CircleShape circle(radius*100);
 	sf::Vector2f coord(center.x*100,height-center.y*100);
 	circle.SetPosition(coord);
-        circle.SetFillColor(sf::Color::Red);
+        circle.SetFillColor(B2SFColor(color));
 	window->Draw(circle);
 }
 

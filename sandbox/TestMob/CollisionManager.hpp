@@ -2,7 +2,8 @@
 #define COLLISIONMANAGER_HPP_INCLUDED
 
 #include <Box2D/Box2D.h>
-#include "Mob.hpp"
+#include "Character.hpp"
+#include "Enemy.hpp"
 #include "Platform.hpp"
 #include <stdio.h>
 #include <string>

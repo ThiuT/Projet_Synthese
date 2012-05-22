@@ -17,7 +17,9 @@ Enemy::Enemy(b2World* world,float32 x,float32 y, string texturePath, sf::IntRect
     fixturedef.filter.maskBits = Element::ALL;
     body->CreateFixture(&fixturedef);
 
-    radar.m_radius = 8.0f;
+    radar.m_radius = 0.5f;
+    radar.m_p.x -= radar.m_radius;
+    radar.m_p.y += radar.m_radius;
     radarFixture.shape = &radar;
     radarFixture.isSensor = true;
     radarFixture.filter.categoryBits = Element::RADAR;
@@ -49,11 +51,11 @@ void Enemy::IA(b2Vec2 playerPosition)
     if(distance<6.0f) {
         switch(iaType) {
             case 1:
-                if(iaTimer<400)
+                if(iaTimer<200)
                     Move(Mob::LEFT,0.2f);
                 else
                     Move(Mob::RIGHT,0.2f);
-                iaTimer = (iaTimer+1)%800;
+                iaTimer = (iaTimer+1)%400;
                 break;
             default:
                 break;

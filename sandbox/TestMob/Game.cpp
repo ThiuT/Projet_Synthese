@@ -31,7 +31,7 @@ void Game::Initialize()
     // Création d'un mob
     player = new Character(world,1.0f,4.0f);
 
-    //enemies.push_back(new Enemy (world,5.0f,3.0f,"smb3-mario_sheet.png",sf::IntRect(5,82,13,26)));
+    enemies.push_back(new Enemy (world,5.0f,3.0f,"smb3-mario_sheet.png",sf::IntRect(5,82,13,26)));
     //enemies.push_back(new FlyingEnemy(world,4.0f,4.0f,"smb3-mario_sheet.png",sf::IntRect(154,48,16,14)));
 
     // Création et assignation d'un renderer pour les objets Box2D
@@ -70,6 +70,9 @@ int Game::Run()
                 switch(sfmlEvent.Key.Code) {
                     case sf::Keyboard::Space:
                         player->Jump(b2Vec2(0.0f,0.05f));
+                        break;
+                    case sf::Keyboard::A:
+                        player->Attack(0);
                         break;
                     default:
                         break;

@@ -6,7 +6,10 @@
 class DynamicElement : public Element
 {
     public:
+        DynamicElement();
         DynamicElement(b2World*,float32,float32,bool);
+        b2Body* GetBody();
+        sf::Sprite GetSprite();
         void Render(sf::RenderWindow*);
         bool IsDestroyed();
         void Destroy();

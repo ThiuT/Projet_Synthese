@@ -18,7 +18,8 @@ class Element {
             ENEMY = 0x0004,
             RADAR = 0x0008,
             INTERACTIVE = 0x0010,
-            ALL = 0x001F
+            WEAPON = 0x0020,
+            ALL = 0x003F
         };
 
     protected:

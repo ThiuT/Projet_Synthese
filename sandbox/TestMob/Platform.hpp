@@ -7,6 +7,10 @@ class Platform : public StaticElement
 {
     public:
         Platform(b2World*,float32,float32,float32,float32,bool);
+        bool IsCloud();
+
+    protected:
+        bool cloud;
 };
 
 

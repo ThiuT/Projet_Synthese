@@ -19,6 +19,8 @@
     fixturedef.shape = &box;
     fixturedef.density = 1.0f;
     fixturedef.isSensor = true;
+    fixturedef.filter.categoryBits = Element::INTERACTIVE;
+    fixturedef.filter.maskBits = Element::CHARACTER;
     body->CreateFixture(&fixturedef);
     body->SetUserData(this);
 }

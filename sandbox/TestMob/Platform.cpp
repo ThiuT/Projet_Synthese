@@ -8,9 +8,13 @@ Platform::Platform(b2World* world, float32 x, float32 y, float32 width, float32 
     fixturedef.friction = 1.0f;
     body->CreateFixture(&fixturedef);
 
-    if(isCloud) ID = "CLOUD";
-    else ID = "PLATFORM";
+    cloud = isCloud;
     body->SetUserData(this);
+}
+
+bool Platform::IsCloud()
+{
+    return cloud;
 }
 
 

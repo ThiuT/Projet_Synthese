@@ -1,5 +1,9 @@
 #include "DynamicElement.hpp"
 
+DynamicElement::DynamicElement()
+{
+}
+
 DynamicElement::DynamicElement(b2World* world, float32 x,float32 y,bool r)
 {
     // Definition d'un corps dynamique à la position initiale x,y
@@ -11,6 +15,16 @@ DynamicElement::DynamicElement(b2World* world, float32 x,float32 y,bool r)
     body = world->CreateBody(&bodydef);
 
     destroyed = false;
+}
+
+b2Body* DynamicElement::GetBody()
+{
+    return body;
+}
+
+sf::Sprite DynamicElement::GetSprite()
+{
+    return sprite;
 }
 
 void DynamicElement::Render(sf::RenderWindow* window)
