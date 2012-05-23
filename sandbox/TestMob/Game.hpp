@@ -19,6 +19,7 @@ class Game {
     private:
         // Attributs SFML
         sf::RenderWindow* window;
+        sf::View view;
         sf::Event sfmlEvent;
         b2World* world;
 

@@ -80,6 +80,8 @@
 		<Unit filename="StaticElement.hpp" />
 		<Unit filename="TeamedEnemy.cpp" />
 		<Unit filename="TeamedEnemy.hpp" />
+		<Unit filename="Weapon.cpp" />
+		<Unit filename="Weapon.hpp" />
 		<Extensions>
 			<code_completion />
 			<debugger />
