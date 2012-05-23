@@ -1,15 +1,21 @@
 #include "InteractiveDecor.hpp"
 
- InteractiveDecor::InteractiveDecor(b2World* world, float32 x, float32 y, float32 width, float32 height, int type) : StaticElement(world,x,y)
+ InteractiveDecor::InteractiveDecor(b2World* world, float32 x, float32 y, float32 width, float32 height, int t) : StaticElement(world,x,y)
 {
+    type = t;
     switch(type) {
         case LADDER:
             texture.LoadFromFile("Ladder.png");
             texture.SetRepeated(true);
             sprite.SetTexture(texture);
-            sprite.SetTextureRect(sf::IntRect(0,0,texture.GetWidth(),height*100));
+            sprite.SetTextureRect(sf::IntRect(0,0,texture.GetWidth(),height*200));
             sprite.SetOrigin(sprite.GetLocalBounds().Width/2.0f,sprite.GetLocalBounds().Height/2.0f);
             ID = "LADDER";
+            break;
+        case FINISH:
+            texture.LoadFromFile("flag.png");
+            sprite.SetTexture(texture);
+            sprite.SetOrigin(sprite.GetLocalBounds().Width/2.0f,sprite.GetLocalBounds().Height/2.0f);
             break;
         default:
             break;
@@ -25,3 +31,7 @@
     body->SetUserData(this);
 }
 
+int InteractiveDecor::GetType()
+{
+    return type;
+}

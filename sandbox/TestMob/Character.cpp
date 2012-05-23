@@ -22,11 +22,18 @@ Character::Character(b2World* world,float32 x,float32 y) : Mob(world,x,y)
     sprite.SetScale(-1,1);
 
     weapon=NULL;
+    victory = false;
 }
 
 void Character::Render(sf::RenderWindow* window)
 {
-    Mob::Render(window);
+    if(victory) {
+        sprite.SetTextureRect(sf::IntRect(214,84,16,25));
+        window->Draw(sprite);
+    }
+    else
+        Mob::Render(window);
+
     if(weapon) {
         if(weapon->IsDone()) {
             delete weapon;
@@ -41,4 +48,14 @@ void Character::Attack(int time)
 {
     if(!weapon)
         weapon = new Weapon(this);
+}
+
+void Character::Win()
+{
+    victory=true;
+}
+
+bool Character::HasWon()
+{
+    return victory;
 }

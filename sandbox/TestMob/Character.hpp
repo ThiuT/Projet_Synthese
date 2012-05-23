@@ -10,9 +10,12 @@ class Character : public Mob
         Character(b2World*,float32,float32);
         void Render(sf::RenderWindow*);
         void Attack(int time);
+        void Win();
+        bool HasWon();
 
     protected:
         Weapon* weapon;
+        bool victory;
 };
 
 #endif // CHARACTER_HPP_INCLUDED

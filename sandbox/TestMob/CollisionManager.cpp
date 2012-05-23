@@ -12,11 +12,11 @@ void CollisionManager::BeginContact(b2Contact* contact)
     contact->GetWorldManifold(&manifold);
 
     // En cas de contact entre le personnage et un ennemi
-    if(categoryA==Element::CHARACTER && categoryB==Element::ENEMY) {
-        Character* character = static_cast<Character*>(contact->GetFixtureA()->GetBody()->GetUserData());
-        Enemy* enemy = static_cast<Enemy*>(contact->GetFixtureB()->GetBody()->GetUserData());
+    if(categoryA==Element::ENEMY && categoryB==Element::CHARACTER) {
+        Character* character = static_cast<Character*>(contact->GetFixtureB()->GetBody()->GetUserData());
+        Enemy* enemy = static_cast<Enemy*>(contact->GetFixtureA()->GetBody()->GetUserData());
         // En cas de collision vers le bas (sur la tête du mob), il est détruit
-        if(manifold.normal.y<0) {
+        if(manifold.normal.y>0) {
             character->Jump(b2Vec2(0.0f,0.07f),true);
             enemy->Destroy();
         }
@@ -32,8 +32,12 @@ void CollisionManager::BeginContact(b2Contact* contact)
     }
 
     else if(categoryA==Element::INTERACTIVE && categoryB==Element::CHARACTER) {
+        InteractiveDecor* decor = static_cast<InteractiveDecor*>(contact->GetFixtureA()->GetBody()->GetUserData());
         Character* character = static_cast<Character*>(contact->GetFixtureB()->GetBody()->GetUserData());
-        character->AllowClimb(true);
+        if(decor->GetType()==InteractiveDecor::LADDER)
+            character->AllowClimb(true);
+        else if(decor->GetType()==InteractiveDecor::FINISH)
+            character->Win();
     }
 
     else if(categoryB==Element::WEAPON) {
@@ -55,10 +59,13 @@ void CollisionManager::EndContact(b2Contact* contact)
         character->AllowJump(false);
     }
     else if(categoryA==Element::INTERACTIVE && categoryB==Element::CHARACTER) {
+        InteractiveDecor* decor = static_cast<InteractiveDecor*>(contact->GetFixtureA()->GetBody()->GetUserData());
         Character* character = static_cast<Character*>(contact->GetFixtureB()->GetBody()->GetUserData());
-        character->AllowClimb(false);
-        contact->GetFixtureB()->GetBody()->SetGravityScale(1);
-        contact->GetFixtureB()->GetBody()->SetLinearDamping(0.0f);
+        if(decor->GetType()==InteractiveDecor::LADDER) {
+            character->AllowClimb(false);
+            contact->GetFixtureB()->GetBody()->SetGravityScale(1);
+            contact->GetFixtureB()->GetBody()->SetLinearDamping(0.0f);
+        }
     }
 }
 

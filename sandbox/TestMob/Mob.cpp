@@ -3,6 +3,8 @@
 Mob::Mob(b2World* world,float32 x,float32 y) : DynamicElement(world,x,y,true)
 {
     animationTimer = 0;
+    canJump = false;
+    canClimb = false;
 }
 
 b2Vec2 Mob::GetPosition()

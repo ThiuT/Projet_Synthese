@@ -29,9 +29,9 @@ void Game::Initialize()
     CreateLevel();
 
     // Création d'un mob
-    player = new Character(world,1.0f,4.0f);
+    player = new Character(world,50.4f,6.0f);
 
-    enemies.push_back(new Enemy (world,10.0f,3.0f,"smb3-mario_sheet.png",sf::IntRect(5,82,13,26)));
+    //enemies.push_back(new Enemy (world,10.0f,3.0f,"smb3-mario_sheet.png",sf::IntRect(5,82,13,26)));
     //enemies.push_back(new FlyingEnemy(world,4.0f,4.0f,"smb3-mario_sheet.png",sf::IntRect(154,48,16,14)));
 
     // Création et assignation d'un renderer pour les objets Box2D
@@ -50,15 +50,53 @@ void Game::Initialize()
 
 void Game::CreateLevel()
 {
-    // Création du "plancher"
-    map.push_back(new Platform(world,8.0f,0.0f,10.0f,0.5f,false));
+    // Création des sols
+    map.push_back(new Platform(world,2.5f,0.0f,2.5f,0.5f,false));
+    map.push_back(new Platform(world,8.2f,0.0f,2.0f,0.5f,false));
+    map.push_back(new Platform(world,20.0f,0.0f,5.0f,0.5f,false));
+    map.push_back(new Platform(world,23.5f,1.0f,0.5f,0.5f,false));
+    map.push_back(new Platform(world,24.5f,1.0f,0.5f,0.5f,false));
+    map.push_back(new Platform(world,24.5f,2.0f,0.5f,0.5f,false));
+    map.push_back(new Platform(world,32.0f,0.0f,6.0f,0.5f,false));
+    map.push_back(new Platform(world,36.0f,4.0f,0.2f,3.0f,false));
+    map.push_back(new Platform(world,56.2f,0.0f,2.5f,0.5f,false));
 
-    // Création d'une plate forme
-    map.push_back(new Platform(world,3.8f,2.0f,0.6f,0.1f,true));
-    map.push_back(new Platform(world,5.2f,2.0f,0.6f,0.1f,true));
-    map.push_back(new Platform(world,12.0f,1.5f,0.6f,0.1f,false));
+    // Création des plate forme
+    map.push_back(new Platform(world,2.9f,1.3f,0.6f,0.1f,false));
+    map.push_back(new Platform(world,4.9f,2.0f,0.9f,0.1f,false));
+    map.push_back(new Platform(world,12.0f,4.0f,2.0f,0.1f,true));
+    map.push_back(new Platform(world,34.8f,5.4f,1.0f,0.1f,true));
+    map.push_back(new Platform(world,34.3f,1.1f,1.5f,0.1f,false));
+    map.push_back(new Platform(world,31.8f,1.9f,0.5f,0.1f,true));
+    map.push_back(new Platform(world,33.3f,2.7f,0.5f,0.1f,true));
+    map.push_back(new Platform(world,34.8f,3.5f,0.5f,0.1f,true));
 
-    map.push_back(new InteractiveDecor(world,4.5f,1.3f,0.1f,1.6f,InteractiveDecor::LADDER));
+    map.push_back(new Platform(world,39.0f,0.8f,0.5f,0.1f,true));
+    map.push_back(new Platform(world,40.0f,1.6f,0.5f,0.1f,true));
+    map.push_back(new Platform(world,41.0f,2.0f,0.25f,0.1f,true));
+    map.push_back(new Platform(world,41.8f,1.3f,0.5f,0.1f,true));
+    map.push_back(new Platform(world,42.0f,2.8f,0.5f,0.1f,true));
+    map.push_back(new Platform(world,43.6f,2.6f,0.5f,0.1f,true));
+    map.push_back(new Platform(world,44.0f,0.8f,0.25f,0.1f,true));
+    map.push_back(new Platform(world,46.2f,3.0f,0.5f,0.1f,true));
+    map.push_back(new Platform(world,45.0f,2.6f,0.5f,0.1f,true));
+    map.push_back(new Platform(world,47.9f,3.7f,0.5f,0.1f,true));
+    map.push_back(new Platform(world,48.6f,4.5f,0.5f,0.1f,true));
+    map.push_back(new Platform(world,50.4f,5.2f,0.5f,0.1f,true));
+    map.push_back(new Platform(world,52.65f,0.5f,0.25f,0.1f,true));
+    map.push_back(new Platform(world,56.2f,5.0f,1.0f,0.1f,true));
+
+    // Création des décors interactifs
+    map.push_back(new InteractiveDecor(world,10.1f,2.3f,0.1f,1.8f,InteractiveDecor::LADDER));
+    map.push_back(new InteractiveDecor(world,33.9f,5.0f,0.1f,0.5f,InteractiveDecor::LADDER));
+    map.push_back(new InteractiveDecor(world,56.2f,2.8f,0.1f,2.3f,InteractiveDecor::LADDER));
+    map.push_back(new InteractiveDecor(world,56.9f,5.2f,0.1f,2.3f,InteractiveDecor::FINISH));
+
+    // Création des mobs
+    enemies.push_back(new Enemy (world,8.2f,1.0f,"smb3-mario_sheet.png",sf::IntRect(5,82,13,26),1));
+    enemies.push_back(new FlyingEnemy(world,15.0f,2.5f,"smb3-mario_sheet.png",sf::IntRect(154,48,16,14)));
+    enemies.push_back(new Enemy (world,19.0f,1.0f,"smb3-mario_sheet.png",sf::IntRect(5,82,13,26),1));
+    enemies.push_back(new Enemy (world,23.5f,1.8f,"smb3-mario_sheet.png",sf::IntRect(5,82,13,26),2));
 }
 
 int Game::Run()
@@ -129,11 +167,14 @@ int Game::Run()
         }
 
         // Affichage du personnage
-        if(player->IsDestroyed()) {
+        if(player->IsDestroyed() || player->GetBody()->GetWorldCenter().y<-3.0f) {
             delete player;
             return Terminate(1);
         }
-        else player->Render(window);
+        else if(player->HasWon())
+            return Terminate(2);
+        else
+            player->Render(window);
 
         view.SetCenter(player->GetBody()->GetWorldCenter().x*100,300);
         window->SetView(view);
@@ -157,19 +198,33 @@ void Game::UpdateMobs()
 
 int Game::Terminate(int cause)
 {
-    mobsIA.Terminate();
-    enemies.clear();
-    window->Clear();
-    window->Close();
-
     switch(cause) {
         case 0:
+            mobsIA.Terminate();
+            enemies.clear();
+            window->Clear();
+            window->Close();
             return 0;
         case 1:
             lives--;
             printf("%i lives remaining !",lives);
+            mobsIA.Terminate();
+            enemies.clear();
+            window->Clear();
+            window->Close();
             return lives;
+        case 2:
+            printf("Congrats!!!!\n");
+            player->Render(window);
+            window->Display();
+            usleep(3000000);
+            mobsIA.Terminate();
+            enemies.clear();
+            window->Clear();
+            window->Close();
+            return 0;
         default:
             return 0;
     }
 }
+

@@ -1,6 +1,6 @@
 #include "Enemy.hpp"
 
-Enemy::Enemy(b2World* world,float32 x,float32 y, string texturePath, sf::IntRect subRect) : Mob(world,x,y)
+Enemy::Enemy(b2World* world,float32 x,float32 y, string texturePath, sf::IntRect subRect, int ia) : Mob(world,x,y)
 {
     // Création du sprite
     texture.LoadFromFile("smb3-mario_sheet.png");
@@ -29,7 +29,7 @@ Enemy::Enemy(b2World* world,float32 x,float32 y, string texturePath, sf::IntRect
     ID = "ENEMY";
     body->SetUserData(this);
     sprite.SetScale(-1,1);
-    iaType = 1;
+    iaType = ia;
     iaTimer = 0;
 }
 
@@ -56,6 +56,13 @@ void Enemy::IA(b2Vec2 playerPosition)
                 else
                     Move(Mob::RIGHT,0.2f);
                 iaTimer = (iaTimer+1)%400;
+                break;
+            case 2:
+                if(iaTimer<100)
+                    Move(Mob::LEFT,0.2f);
+                else
+                    Move(Mob::RIGHT,0.2f);
+                iaTimer = (iaTimer+1)%200;
                 break;
             default:
                 break;

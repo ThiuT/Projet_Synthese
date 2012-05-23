@@ -6,7 +6,7 @@
 class Enemy : public Mob
 {
     public:
-        Enemy(b2World*,float32,float32,string,sf::IntRect);
+        Enemy(b2World*,float32,float32,string,sf::IntRect,int);
         void Sense(Mob* mob);
         void UnSense(Mob* mob);
         void IA(b2Vec2 playerPosition);
