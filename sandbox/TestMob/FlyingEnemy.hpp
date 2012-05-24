@@ -6,7 +6,7 @@
 class FlyingEnemy : public Enemy
 {
     public:
-        FlyingEnemy(b2World*,float32,float32,string,sf::IntRect);
+        FlyingEnemy(b2World*,float32,float32);
         ~FlyingEnemy();
 };
 

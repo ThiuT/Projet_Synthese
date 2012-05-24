@@ -6,7 +6,7 @@
 class Platform : public StaticElement
 {
     public:
-        Platform(b2World*,float32,float32,float32,float32,bool);
+        Platform(b2World*,float32,float32,float32,float32,std::string,bool);
         bool IsCloud();
 
     protected:

@@ -1,11 +1,17 @@
 #include "Enemy.hpp"
 
-Enemy::Enemy(b2World* world,float32 x,float32 y, string texturePath, sf::IntRect subRect, int ia) : Mob(world,x,y)
+Enemy::Enemy(b2World* world,float32 x,float32 y, int ia, string texturePath, sf::IntRect subRect) : Mob(world,x,y)
 {
+    if(texturePath.compare("default")==0) {
+        if(ia==1)
+            texturePath = "green_turtle.png";
+        else
+            texturePath = "red_turtle.png";
+    }
     // Création du sprite
-    texture.LoadFromFile("smb3-mario_sheet.png");
+    texture.LoadFromFile(texturePath);
     sprite.SetTexture(texture);
-    sprite.SetTextureRect(sf::IntRect(5,82,13,26));
+    sprite.SetTextureRect(subRect);
     sprite.SetOrigin(sprite.GetLocalBounds().Width/2.0f,sprite.GetLocalBounds().Height/2.0f);
 
     // Création de la hitbox
@@ -28,9 +34,19 @@ Enemy::Enemy(b2World* world,float32 x,float32 y, string texturePath, sf::IntRect
 
     ID = "ENEMY";
     body->SetUserData(this);
-    sprite.SetScale(-1,1);
+    sprite.SetScale(1,1);
     iaType = ia;
     iaTimer = 0;
+}
+
+void Enemy::Render(sf::RenderWindow* window)
+{
+    animationTimer = (animationTimer+1)%80;
+    if(animationTimer<40)
+        sprite.SetTextureRect(sf::IntRect(1,1,18,28));
+    else
+        sprite.SetTextureRect(sf::IntRect(20,1,18,28));
+    Mob::Render(window);
 }
 
 void Enemy::Sense(Mob* mob)
@@ -51,11 +67,11 @@ void Enemy::IA(b2Vec2 playerPosition)
     if(distance<6.0f) {
         switch(iaType) {
             case 1:
-                if(iaTimer<200)
+                if(iaTimer<300)
                     Move(Mob::LEFT,0.2f);
                 else
                     Move(Mob::RIGHT,0.2f);
-                iaTimer = (iaTimer+1)%400;
+                iaTimer = (iaTimer+1)%600;
                 break;
             case 2:
                 if(iaTimer<100)

@@ -61,29 +61,8 @@ float32 Mob::GetB2Height()
     return sprite.GetLocalBounds().Height/200.0f;
 }
 
-void Mob::Render(sf::RenderWindow* window) {
-
-    if(body->GetGravityScale()==0) {
-    }
-    else {
-        b2Vec2 vel = body->GetLinearVelocity();
-        if(vel.y==0) {
-            if(vel.x==0) {
-                sprite.SetTextureRect(sf::IntRect(5,82,13,26));
-            }
-            else {
-                animationTimer = (animationTimer+1)%100;
-                if(animationTimer<50)
-                    sprite.SetTextureRect(sf::IntRect(64,84,15,24));
-                else
-                    sprite.SetTextureRect(sf::IntRect(34,82,15,26));
-            }
-        }
-        else {
-            sprite.SetTextureRect(sf::IntRect(94,83,15,26));
-        }
-    }
-
+void Mob::Render(sf::RenderWindow* window)
+{
     sprite.SetPosition(body->GetPosition().x*100, window->GetHeight()-body->GetPosition().y*100);
     window->Draw(sprite);
 }

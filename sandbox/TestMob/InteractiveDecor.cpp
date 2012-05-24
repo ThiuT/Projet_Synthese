@@ -17,6 +17,11 @@
             sprite.SetTexture(texture);
             sprite.SetOrigin(sprite.GetLocalBounds().Width/2.0f,sprite.GetLocalBounds().Height/2.0f);
             break;
+        case SWITCH:
+            texture.LoadFromFile("flag.png");
+            sprite.SetTexture(texture);
+            sprite.SetOrigin(sprite.GetLocalBounds().Width/2.0f,sprite.GetLocalBounds().Height/2.0f);
+            break;
         default:
             break;
     }

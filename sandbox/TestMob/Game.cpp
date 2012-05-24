@@ -29,10 +29,7 @@ void Game::Initialize()
     CreateLevel();
 
     // Création d'un mob
-    player = new Character(world,50.4f,6.0f);
-
-    //enemies.push_back(new Enemy (world,10.0f,3.0f,"smb3-mario_sheet.png",sf::IntRect(5,82,13,26)));
-    //enemies.push_back(new FlyingEnemy(world,4.0f,4.0f,"smb3-mario_sheet.png",sf::IntRect(154,48,16,14)));
+    player = new Character(world,1.0f,6.0f);
 
     // Création et assignation d'un renderer pour les objets Box2D
     DebugDraw* debugDraw;
@@ -46,45 +43,51 @@ void Game::Initialize()
     view.SetCenter(100,300);
     view.SetSize(800,600);
     window->SetView(view);
+
+    bgtexture.LoadFromFile("background.jpg");
+    bgtexture.SetRepeated(true);
+    background.SetTexture(bgtexture);
+    background.SetTextureRect(sf::IntRect(0,0,7200,600));
+    background.SetPosition(-600,0);
 }
 
 void Game::CreateLevel()
 {
     // Création des sols
-    map.push_back(new Platform(world,2.5f,0.0f,2.5f,0.5f,false));
-    map.push_back(new Platform(world,8.2f,0.0f,2.0f,0.5f,false));
-    map.push_back(new Platform(world,20.0f,0.0f,5.0f,0.5f,false));
-    map.push_back(new Platform(world,23.5f,1.0f,0.5f,0.5f,false));
-    map.push_back(new Platform(world,24.5f,1.0f,0.5f,0.5f,false));
-    map.push_back(new Platform(world,24.5f,2.0f,0.5f,0.5f,false));
-    map.push_back(new Platform(world,32.0f,0.0f,6.0f,0.5f,false));
-    map.push_back(new Platform(world,36.0f,4.0f,0.2f,3.0f,false));
-    map.push_back(new Platform(world,56.2f,0.0f,2.5f,0.5f,false));
+    map.push_back(new Platform(world,2.5f,0.0f,2.5f,0.5f,"metal.jpeg",false));
+    map.push_back(new Platform(world,8.2f,0.0f,2.0f,0.5f,"metal.jpeg",false));
+    map.push_back(new Platform(world,20.0f,0.0f,5.0f,0.5f,"metal.jpeg",false));
+    map.push_back(new Platform(world,23.5f,1.0f,0.5f,0.5f,"box.png",false));
+    map.push_back(new Platform(world,24.5f,1.0f,0.5f,0.5f,"box.png",false));
+    map.push_back(new Platform(world,24.5f,2.0f,0.5f,0.5f,"box.png",false));
+    map.push_back(new Platform(world,32.0f,0.0f,6.0f,0.5f,"metal.jpeg",false));
+    map.push_back(new Platform(world,36.0f,2.4f,0.2f,3.0f,"wall.png",false));
+    map.push_back(new Platform(world,56.2f,0.0f,2.5f,0.5f,"metal.jpeg",false));
 
     // Création des plate forme
-    map.push_back(new Platform(world,2.9f,1.3f,0.6f,0.1f,false));
-    map.push_back(new Platform(world,4.9f,2.0f,0.9f,0.1f,false));
-    map.push_back(new Platform(world,12.0f,4.0f,2.0f,0.1f,true));
-    map.push_back(new Platform(world,34.8f,5.4f,1.0f,0.1f,true));
-    map.push_back(new Platform(world,34.3f,1.1f,1.5f,0.1f,false));
-    map.push_back(new Platform(world,31.8f,1.9f,0.5f,0.1f,true));
-    map.push_back(new Platform(world,33.3f,2.7f,0.5f,0.1f,true));
-    map.push_back(new Platform(world,34.8f,3.5f,0.5f,0.1f,true));
+    map.push_back(new Platform(world,2.9f,1.3f,0.6f,0.1f,"metal.jpeg",false));
+    map.push_back(new Platform(world,4.9f,2.0f,0.9f,0.1f,"metal.jpeg",false));
+    map.push_back(new Platform(world,12.0f,4.0f,2.0f,0.1f,"cloud.png",true));
+    map.push_back(new Platform(world,34.8f,5.4f,1.0f,0.1f,"cloud.png",true));
+    map.push_back(new Platform(world,34.3f,1.1f,1.5f,0.1f,"metal.jpeg",false));
+    map.push_back(new Platform(world,31.8f,1.9f,0.5f,0.1f,"cloud.png",true));
+    map.push_back(new Platform(world,33.3f,2.7f,0.5f,0.1f,"cloud.png",true));
+    map.push_back(new Platform(world,34.8f,3.5f,0.5f,0.1f,"cloud.png",true));
 
-    map.push_back(new Platform(world,39.0f,0.8f,0.5f,0.1f,true));
-    map.push_back(new Platform(world,40.0f,1.6f,0.5f,0.1f,true));
-    map.push_back(new Platform(world,41.0f,2.0f,0.25f,0.1f,true));
-    map.push_back(new Platform(world,41.8f,1.3f,0.5f,0.1f,true));
-    map.push_back(new Platform(world,42.0f,2.8f,0.5f,0.1f,true));
-    map.push_back(new Platform(world,43.6f,2.6f,0.5f,0.1f,true));
-    map.push_back(new Platform(world,44.0f,0.8f,0.25f,0.1f,true));
-    map.push_back(new Platform(world,46.2f,3.0f,0.5f,0.1f,true));
-    map.push_back(new Platform(world,45.0f,2.6f,0.5f,0.1f,true));
-    map.push_back(new Platform(world,47.9f,3.7f,0.5f,0.1f,true));
-    map.push_back(new Platform(world,48.6f,4.5f,0.5f,0.1f,true));
-    map.push_back(new Platform(world,50.4f,5.2f,0.5f,0.1f,true));
-    map.push_back(new Platform(world,52.65f,0.5f,0.25f,0.1f,true));
-    map.push_back(new Platform(world,56.2f,5.0f,1.0f,0.1f,true));
+    map.push_back(new Platform(world,39.0f,0.8f,0.5f,0.1f,"cloud.png",true));
+    map.push_back(new Platform(world,40.0f,1.6f,0.5f,0.1f,"cloud.png",true));
+    map.push_back(new Platform(world,41.0f,2.0f,0.25f,0.1f,"cloud.png",true));
+    map.push_back(new Platform(world,41.8f,1.3f,0.5f,0.1f,"cloud.png",true));
+    map.push_back(new Platform(world,42.0f,2.8f,0.5f,0.1f,"cloud.png",true));
+    map.push_back(new Platform(world,43.6f,2.6f,0.5f,0.1f,"cloud.png",true));
+    map.push_back(new Platform(world,44.0f,0.8f,0.25f,0.1f,"cloud.png",true));
+    map.push_back(new Platform(world,46.2f,3.0f,0.5f,0.1f,"cloud.png",true));
+    map.push_back(new Platform(world,45.0f,2.6f,0.5f,0.1f,"cloud.png",true));
+    map.push_back(new Platform(world,47.9f,3.7f,0.5f,0.1f,"cloud.png",true));
+    map.push_back(new Platform(world,48.6f,4.5f,0.5f,0.1f,"cloud.png",true));
+    map.push_back(new Platform(world,50.4f,5.2f,0.5f,0.1f,"cloud.png",true));
+    map.push_back(new Platform(world,52.65f,0.5f,0.25f,0.1f,"cloud.png",true));
+    map.push_back(new Platform(world,56.2f,5.0f,1.0f,0.1f,"cloud.png",true));
 
     // Création des décors interactifs
     map.push_back(new InteractiveDecor(world,10.1f,2.3f,0.1f,1.8f,InteractiveDecor::LADDER));
@@ -93,10 +96,16 @@ void Game::CreateLevel()
     map.push_back(new InteractiveDecor(world,56.9f,5.2f,0.1f,2.3f,InteractiveDecor::FINISH));
 
     // Création des mobs
-    enemies.push_back(new Enemy (world,8.2f,1.0f,"smb3-mario_sheet.png",sf::IntRect(5,82,13,26),1));
-    enemies.push_back(new FlyingEnemy(world,15.0f,2.5f,"smb3-mario_sheet.png",sf::IntRect(154,48,16,14)));
-    enemies.push_back(new Enemy (world,19.0f,1.0f,"smb3-mario_sheet.png",sf::IntRect(5,82,13,26),1));
-    enemies.push_back(new Enemy (world,23.5f,1.8f,"smb3-mario_sheet.png",sf::IntRect(5,82,13,26),2));
+    enemies.push_back(new Enemy (world,8.2f,1.0f,1));
+    enemies.push_back(new FlyingEnemy(world,15.0f,2.5f));
+    enemies.push_back(new Enemy (world,19.0f,1.0f,1));
+    enemies.push_back(new Enemy (world,23.5f,1.8f,2));
+    enemies.push_back(new Enemy (world,30.5f,1.8f,1));
+    enemies.push_back(new Enemy (world,33.3f,3.0f,2));
+    enemies.push_back(new Enemy (world,42.0f,3.1f,2));
+    enemies.push_back(new Enemy (world,50.4f,5.5f,2));
+    enemies.push_back(new FlyingEnemy(world,56.2f,2.0f));
+    enemies.push_back(new FlyingEnemy(world,56.6f,4.0f));
 }
 
 int Game::Run()
@@ -142,8 +151,10 @@ int Game::Run()
         // Itération dans le monde
         world->Step(timeStep,velocityIterations,positionIterations);
 
+        window->Draw(background);
+
         // Dessin des hitbox
-        world->DrawDebugData();
+        //world->DrawDebugData();
 
         // Affichage des plates formes
         std::vector<StaticElement*>::iterator mapIterator = map.begin();

@@ -78,8 +78,8 @@
 		<Unit filename="Platform.hpp" />
 		<Unit filename="StaticElement.cpp" />
 		<Unit filename="StaticElement.hpp" />
-		<Unit filename="TeamedEnemy.cpp" />
-		<Unit filename="TeamedEnemy.hpp" />
+		<Unit filename="Switch.cpp" />
+		<Unit filename="Switch.hpp" />
 		<Unit filename="Weapon.cpp" />
 		<Unit filename="Weapon.hpp" />
 		<Extensions>

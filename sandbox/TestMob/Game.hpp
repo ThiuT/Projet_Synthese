@@ -13,6 +13,7 @@
 #include "Platform.hpp"
 #include "InteractiveDecor.hpp"
 #include "FlyingEnemy.hpp"
+#include "Switch.hpp"
 
 class Game {
 
@@ -39,6 +40,9 @@ class Game {
 
         int lives;
         sf::Thread mobsIA;
+
+        sf::Sprite background;
+        sf::Texture bgtexture;
 
     public:
         Game();

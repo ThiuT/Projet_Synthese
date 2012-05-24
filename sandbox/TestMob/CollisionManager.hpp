@@ -6,6 +6,7 @@
 #include "Enemy.hpp"
 #include "Platform.hpp"
 #include "InteractiveDecor.hpp"
+#include "Switch.hpp"
 #include <stdio.h>
 #include <string>
 

@@ -6,7 +6,8 @@
 class Enemy : public Mob
 {
     public:
-        Enemy(b2World*,float32,float32,string,sf::IntRect,int);
+        Enemy(b2World*,float32,float32,int,std::string texturePath="default",sf::IntRect subRect=sf::IntRect(2,2,16,27));
+        void Render(sf::RenderWindow*);
         void Sense(Mob* mob);
         void UnSense(Mob* mob);
         void IA(b2Vec2 playerPosition);

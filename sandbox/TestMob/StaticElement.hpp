@@ -7,6 +7,7 @@ class StaticElement : public Element
 {
     public:
         StaticElement(b2World*,float32,float32);
+        b2Body* GetBody();
         void Render(sf::RenderWindow*);
         ~StaticElement();
 

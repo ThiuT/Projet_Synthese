@@ -14,7 +14,7 @@
 1337626002 /home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Mob.hpp
 	"DynamicElement.hpp"
 
-1337756880 source:/home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Mob.cpp
+1337871262 source:/home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Mob.cpp
 	"Mob.hpp"
 
 1335629126 source:/home/thiut/Documents/ESIL/Projet_Synthese/sandbox/PremiersTestsBen/DebugDraw.cpp
@@ -35,23 +35,23 @@
 	<SFML/Graphics.hpp>
 	<SFML/Window.hpp>
 
-1337765995 source:/home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Character.cpp
+1337869457 source:/home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Character.cpp
 	"Character.hpp"
 
 1337766029 /home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Character.hpp
 	"Mob.hpp"
 	"Weapon.hpp"
 
-1337758319 source:/home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Enemy.cpp
+1337871068 source:/home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Enemy.cpp
 	"Enemy.hpp"
 
-1337758436 /home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Enemy.hpp
+1337871440 /home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Enemy.hpp
 	"Mob.hpp"
 
-1337765268 source:/home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Game.cpp
+1337870658 source:/home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Game.cpp
 	"Game.hpp"
 
-1337754082 /home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Game.hpp
+1337865892 /home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Game.hpp
 	<SFML/Graphics.hpp>
 	<SFML/Window.hpp>
 	<Box2D/Box2D.h>
@@ -64,17 +64,19 @@
 	"Platform.hpp"
 	"InteractiveDecor.hpp"
 	"FlyingEnemy.hpp"
+	"Switch.hpp"
 
-1337765492 /home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/CollisionManager.hpp
+1337861622 /home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/CollisionManager.hpp
 	<Box2D/Box2D.h>
 	"Character.hpp"
 	"Enemy.hpp"
 	"Platform.hpp"
 	"InteractiveDecor.hpp"
+	"Switch.hpp"
 	<stdio.h>
 	<string>
 
-1337765584 source:/home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/CollisionManager.cpp
+1337866274 source:/home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/CollisionManager.cpp
 	"CollisionManager.hpp"
 
 1337700094 /home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/DynamicElement.hpp
@@ -83,16 +85,16 @@
 1337700152 source:/home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/DynamicElement.cpp
 	"DynamicElement.hpp"
 
-1336929444 source:/home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/StaticElement.cpp
+1337860486 source:/home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/StaticElement.cpp
 	"StaticElement.hpp"
 
-1337689543 /home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Platform.hpp
+1337864196 /home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Platform.hpp
 	"StaticElement.hpp"
 
-1336929986 /home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/StaticElement.hpp
+1337860500 /home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/StaticElement.hpp
 	"Element.hpp"
 
-1337689574 source:/home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Platform.cpp
+1337864744 source:/home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Platform.cpp
 	"Platform.hpp"
 
 1337702597 /home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Element.hpp
@@ -106,16 +108,16 @@
 1336830059 source:/home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Element.cpp
 	"Element.hpp"
 
-1337765347 /home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/InteractiveDecor.hpp
+1337860710 /home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/InteractiveDecor.hpp
 	"StaticElement.hpp"
 
-1337765386 source:/home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/InteractiveDecor.cpp
+1337860697 source:/home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/InteractiveDecor.cpp
 	"InteractiveDecor.hpp"
 
-1337758453 source:/home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/FlyingEnemy.cpp
+1337870748 source:/home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/FlyingEnemy.cpp
 	"FlyingEnemy.hpp"
 
-1337445212 /home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/FlyingEnemy.hpp
+1337870670 /home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/FlyingEnemy.hpp
 	"Enemy.hpp"
 
 1337758465 source:/home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/TeamedEnemy.cpp
@@ -124,10 +126,16 @@
 1337528819 /home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/TeamedEnemy.hpp
 	"Enemy.hpp"
 
-1337695436 /home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Weapon.hpp
+1337859383 /home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Weapon.hpp
 	"DynamicElement.hpp"
 	"Mob.hpp"
 
 1337702637 source:/home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Weapon.cpp
 	"Weapon.hpp"
+
+1337862314 source:/home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Switch.cpp
+	"Switch.hpp"
+
+1337862317 /home/thiut/Documents/ESIL/Projet_Synthese/sandbox/TestMob/Switch.hpp
+	"InteractiveDecor.hpp"
 

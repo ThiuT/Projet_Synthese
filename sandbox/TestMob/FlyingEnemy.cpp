@@ -1,6 +1,6 @@
 #include "FlyingEnemy.hpp"
 
-FlyingEnemy::FlyingEnemy(b2World* world,float32 x,float32 y, string texturePath, sf::IntRect subRect) : Enemy(world,x,y,texturePath,subRect,1)
+FlyingEnemy::FlyingEnemy(b2World* world,float32 x,float32 y) : Enemy(world,x,y,1,"flying_turtle.png",sf::IntRect(2,1,16,27))
 {
     ID = "ENEMY";
     body->SetUserData(this);

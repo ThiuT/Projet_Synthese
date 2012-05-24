@@ -40,6 +40,11 @@ void CollisionManager::BeginContact(b2Contact* contact)
             character->Win();
     }
 
+    else if(categoryA==Element::WEAPON) {
+        Mob* mob = static_cast<Mob*>(contact->GetFixtureB()->GetBody()->GetUserData());
+        mob->Destroy();
+    }
+
     else if(categoryB==Element::WEAPON) {
         Mob* mob = static_cast<Mob*>(contact->GetFixtureA()->GetBody()->GetUserData());
         mob->Destroy();
