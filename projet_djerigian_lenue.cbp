@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Projet Jeu Djerigian Le Nue" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="src/bin/Debug/Projet Jeu Djerigian Le Nue" prefix_auto="1" extension_auto="1" />
+				<Option object_output="src/obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="Jeu_Djerigian_LeNue" prefix_auto="1" extension_auto="1" />
+				<Option object_output="src/obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Linker>
+			<Add library="lib/Box2D_v2.2.1/Build/Box2D/libBox2D.so" />
+			<Add library="lib/SFML/Build/lib/libsfml-audio.so" />
+			<Add library="lib/SFML/Build/lib/libsfml-graphics.so" />
+			<Add library="lib/SFML/Build/lib/libsfml-network.so" />
+			<Add library="lib/SFML/Build/lib/libsfml-system.so" />
+			<Add library="lib/SFML/Build/lib/libsfml-window.so" />
+		</Linker>
+		<Unit filename="src/Character.cpp" />
+		<Unit filename="src/Character.hpp" />
+		<Unit filename="src/CollisionManager.cpp" />
+		<Unit filename="src/CollisionManager.hpp" />
+		<Unit filename="src/DebugDraw.cpp" />
+		<Unit filename="src/DebugDraw.h" />
+		<Unit filename="src/DynamicElement.cpp" />
+		<Unit filename="src/DynamicElement.hpp" />
+		<Unit filename="src/Element.hpp" />
+		<Unit filename="src/Enemy.cpp" />
+		<Unit filename="src/Enemy.hpp" />
+		<Unit filename="src/FlyingEnemy.cpp" />
+		<Unit filename="src/FlyingEnemy.hpp" />
+		<Unit filename="src/Game.cpp" />
+		<Unit filename="src/Game.hpp" />
+		<Unit filename="src/InteractiveDecor.cpp" />
+		<Unit filename="src/InteractiveDecor.hpp" />
+		<Unit filename="src/Main.cpp" />
+		<Unit filename="src/Mob.cpp" />
+		<Unit filename="src/Mob.hpp" />
+		<Unit filename="src/Platform.cpp" />
+		<Unit filename="src/Platform.hpp" />
+		<Unit filename="src/StaticElement.cpp" />
+		<Unit filename="src/StaticElement.hpp" />
+		<Unit filename="src/Weapon.cpp" />
+		<Unit filename="src/Weapon.hpp" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

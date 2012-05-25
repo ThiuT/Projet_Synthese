@@ -1,0 +1,109 @@
+# depslib dependency file v1.0
+1337962414 source:/home/thiut/Documents/ESIL/Projet_Synthese/src/Character.cpp
+	"Character.hpp"
+
+1337961103 /home/thiut/Documents/ESIL/Projet_Synthese/src/Character.hpp
+	"Mob.hpp"
+	"Weapon.hpp"
+
+1337626002 /home/thiut/Documents/ESIL/Projet_Synthese/src/Mob.hpp
+	"DynamicElement.hpp"
+
+1337962327 /home/thiut/Documents/ESIL/Projet_Synthese/src/DynamicElement.hpp
+	"Element.hpp"
+
+1337962475 /home/thiut/Documents/ESIL/Projet_Synthese/src/Element.hpp
+	<SFML/Graphics.hpp>
+	<SFML/Window.hpp>
+	<Box2D/Box2D.h>
+	<stdio.h>
+	<string>
+	<cmath>
+
+1337859383 /home/thiut/Documents/ESIL/Projet_Synthese/src/Weapon.hpp
+	"DynamicElement.hpp"
+	"Mob.hpp"
+
+1337961817 source:/home/thiut/Documents/ESIL/Projet_Synthese/src/CollisionManager.cpp
+	"CollisionManager.hpp"
+
+1337961881 /home/thiut/Documents/ESIL/Projet_Synthese/src/CollisionManager.hpp
+	<Box2D/Box2D.h>
+	"Character.hpp"
+	"Enemy.hpp"
+	"Platform.hpp"
+	"InteractiveDecor.hpp"
+	<stdio.h>
+	<string>
+
+1337963072 /home/thiut/Documents/ESIL/Projet_Synthese/src/Enemy.hpp
+	"Mob.hpp"
+
+1337864196 /home/thiut/Documents/ESIL/Projet_Synthese/src/Platform.hpp
+	"StaticElement.hpp"
+
+1337860500 /home/thiut/Documents/ESIL/Projet_Synthese/src/StaticElement.hpp
+	"Element.hpp"
+
+1337860710 /home/thiut/Documents/ESIL/Projet_Synthese/src/InteractiveDecor.hpp
+	"StaticElement.hpp"
+
+1337688531 source:/home/thiut/Documents/ESIL/Projet_Synthese/src/DebugDraw.cpp
+	"DebugDraw.h"
+
+1335628932 /home/thiut/Documents/ESIL/Projet_Synthese/src/DebugDraw.h
+	<stdio.h>
+	<Box2D/Box2D.h>
+	<SFML/Graphics.hpp>
+	<SFML/Window.hpp>
+
+1337962273 source:/home/thiut/Documents/ESIL/Projet_Synthese/src/DynamicElement.cpp
+	"DynamicElement.hpp"
+
+1336830059 source:/home/thiut/Documents/ESIL/Projet_Synthese/src/Element.cpp
+	"Element.hpp"
+
+1337963012 source:/home/thiut/Documents/ESIL/Projet_Synthese/src/Enemy.cpp
+	"Enemy.hpp"
+
+1337963256 source:/home/thiut/Documents/ESIL/Projet_Synthese/src/FlyingEnemy.cpp
+	"FlyingEnemy.hpp"
+
+1337963250 /home/thiut/Documents/ESIL/Projet_Synthese/src/FlyingEnemy.hpp
+	"Enemy.hpp"
+
+1337963822 source:/home/thiut/Documents/ESIL/Projet_Synthese/src/Game.cpp
+	"Game.hpp"
+
+1337963882 /home/thiut/Documents/ESIL/Projet_Synthese/src/Game.hpp
+	<SFML/Graphics.hpp>
+	<SFML/Window.hpp>
+	<Box2D/Box2D.h>
+	<stdio.h>
+	<string.h>
+	"DebugDraw.h"
+	"Character.hpp"
+	"Enemy.hpp"
+	"CollisionManager.hpp"
+	"Platform.hpp"
+	"InteractiveDecor.hpp"
+	"FlyingEnemy.hpp"
+
+1337959972 source:/home/thiut/Documents/ESIL/Projet_Synthese/src/InteractiveDecor.cpp
+	"InteractiveDecor.hpp"
+
+1337274864 source:/home/thiut/Documents/ESIL/Projet_Synthese/src/Main.cpp
+	"Game.hpp"
+
+1337871262 source:/home/thiut/Documents/ESIL/Projet_Synthese/src/Mob.cpp
+	"Mob.hpp"
+
+1337864744 source:/home/thiut/Documents/ESIL/Projet_Synthese/src/Platform.cpp
+	"Platform.hpp"
+
+1337860486 source:/home/thiut/Documents/ESIL/Projet_Synthese/src/StaticElement.cpp
+	"StaticElement.hpp"
+
+1337959949 source:/home/thiut/Documents/ESIL/Projet_Synthese/src/Weapon.cpp
+	"Weapon.hpp"
+
