@@ -1,3 +1,13 @@
+/**
+ * @author Benoit DJERIGIAN
+ * @author Nicolas LE NUE
+ * @file Mob.hpp
+ * @brief Déclaration des mobs
+ *
+ * Ce fichier déclare la classe Mob (Mobile OBject) représentant
+ * de manière générique les entités mouvantes (personnage et ennemis).
+ */
+
 #ifndef MOB_HPP_INCLUDED
 #define MOB_HPP_INCLUDED
 

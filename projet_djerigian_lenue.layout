@@ -2,7 +2,7 @@
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Release" />
 	<File name="src/Character.cpp" open="0" top="0" tabpos="0">
-		<Cursor position="1368" topLine="38" />
+		<Cursor position="1368" topLine="33" />
 	</File>
 	<File name="src/Character.hpp" open="0" top="0" tabpos="0">
 		<Cursor position="307" topLine="0" />
@@ -13,8 +13,8 @@
 	<File name="src/CollisionManager.hpp" open="0" top="0" tabpos="0">
 		<Cursor position="265" topLine="0" />
 	</File>
-	<File name="src/DynamicElement.cpp" open="1" top="0" tabpos="1">
-		<Cursor position="356" topLine="12" />
+	<File name="src/DynamicElement.cpp" open="0" top="0" tabpos="1">
+		<Cursor position="1925" topLine="75" />
 	</File>
 	<File name="src/DynamicElement.hpp" open="0" top="0" tabpos="0">
 		<Cursor position="234" topLine="0" />
@@ -22,7 +22,7 @@
 	<File name="src/Element.hpp" open="0" top="0" tabpos="0">
 		<Cursor position="229" topLine="0" />
 	</File>
-	<File name="src/Enemy.cpp" open="1" top="1" tabpos="2">
+	<File name="src/Enemy.cpp" open="0" top="0" tabpos="2">
 		<Cursor position="204" topLine="0" />
 	</File>
 	<File name="src/Enemy.hpp" open="0" top="0" tabpos="0">
@@ -34,13 +34,13 @@
 	<File name="src/FlyingEnemy.hpp" open="0" top="0" tabpos="0">
 		<Cursor position="80" topLine="0" />
 	</File>
-	<File name="src/Game.cpp" open="1" top="0" tabpos="3">
+	<File name="src/Game.cpp" open="0" top="0" tabpos="3">
 		<Cursor position="0" topLine="0" />
 	</File>
 	<File name="src/Game.hpp" open="0" top="0" tabpos="0">
 		<Cursor position="185" topLine="40" />
 	</File>
-	<File name="src/InteractiveDecor.cpp" open="1" top="0" tabpos="4">
+	<File name="src/InteractiveDecor.cpp" open="0" top="0" tabpos="4">
 		<Cursor position="0" topLine="0" />
 	</File>
 	<File name="src/InteractiveDecor.hpp" open="0" top="0" tabpos="0">
@@ -49,7 +49,25 @@
 	<File name="src/Main.cpp" open="0" top="0" tabpos="0">
 		<Cursor position="468" topLine="7" />
 	</File>
-	<File name="src/Weapon.cpp" open="0" top="0" tabpos="0">
-		<Cursor position="295" topLine="0" />
+	<File name="src/Mob.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="195" topLine="0" />
+	</File>
+	<File name="src/Mob.hpp" open="0" top="0" tabpos="0">
+		<Cursor position="251" topLine="0" />
+	</File>
+	<File name="src/Platform.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="219" topLine="0" />
+	</File>
+	<File name="src/Platform.hpp" open="0" top="0" tabpos="0">
+		<Cursor position="215" topLine="2" />
+	</File>
+	<File name="src/StaticElement.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="241" topLine="12" />
+	</File>
+	<File name="src/StaticElement.hpp" open="0" top="0" tabpos="0">
+		<Cursor position="233" topLine="11" />
+	</File>
+	<File name="src/Weapon.hpp" open="0" top="0" tabpos="0">
+		<Cursor position="190" topLine="0" />
 	</File>
 </CodeBlocks_layout_file>

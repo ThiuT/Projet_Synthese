@@ -1,3 +1,13 @@
+/**
+ * @author Benoit DJERIGIAN
+ * @author Nicolas LE NUE
+ * @file StaticElement.hpp
+ * @brief Déclaration des éléments statiques
+ *
+ * Ce fichier déclare la classe StaticElement, mère de
+ * tous les éléments immobiles du jeu.
+ */
+
 #ifndef STATICELEMENT_HPP_INCLUDED
 #define STATICELEMENT_HPP_INCLUDED
 

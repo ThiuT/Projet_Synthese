@@ -1,3 +1,12 @@
+/**
+ * @author Benoit DJERIGIAN
+ * @author Nicolas LE NUE
+ * @file Weapon.hpp
+ * @brief Déclaration des armes
+ *
+ * Ce fichier déclare la classe Weapon, représentant l'arme du personnage.
+ */
+
 #ifndef WEAPON_HPP_INCLUDED
 #define WEAPON_HPP_INCLUDED
 

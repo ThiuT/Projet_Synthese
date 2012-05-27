@@ -1,5 +1,27 @@
+/**
+ * @author Benoit DJERIGIAN
+ * @author Nicolas LE NUE
+ * @file Platform.cpp
+ * @brief Implémentation des plates-formes
+ *
+ * Ce fichier implémente les méthodes de la classe Platform
+ */
+
 #include "Platform.hpp"
 
+/** @brief Constructeur
+ *
+ * Appelle le constructeur de StaticElement à la position voulue, crée la forme
+ * et la composante graphique.
+ *
+ * @param world : pointeur vers le monde Box2D
+ * @param x : position initiale x
+ * @param y : position initiale y
+ * @param width : largeur
+ * @param height : hauteur
+ * @param texturePath : chemin d'accès à la texture
+ * @param isCloud : drapeau permettant de marquer les clouds
+ */
 Platform::Platform(b2World* world, float32 x, float32 y, float32 width, float32 height, std::string texturePath, bool isCloud) : StaticElement(world,x,y)
 {
     texture.LoadFromFile(texturePath);
@@ -18,6 +40,10 @@ Platform::Platform(b2World* world, float32 x, float32 y, float32 width, float32 
     body->SetUserData(this);
 }
 
+/** @brief Test cloud
+ *
+ * Permet de savoir si la plate forme est un cloud.
+ */
 bool Platform::IsCloud()
 {
     return cloud;

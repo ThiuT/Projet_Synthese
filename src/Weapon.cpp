@@ -1,5 +1,21 @@
+/**
+ * @author Benoit DJERIGIAN
+ * @author Nicolas LE NUE
+ * @file Weapon.cpp
+ * @brief Implémentation des armes
+ *
+ * Ce fichier implémente les méthodes de la classe Weapon
+ */
+
 #include "Weapon.hpp"
 
+/** @brief Constructeur
+ *
+ * Crée un corps dynamique devant le porteur, associe forme et
+ * composante graphique et crée une jointure avec le corps du porteur.
+ *
+ * @param mob : pointeur vers le porteur.
+ */
 Weapon::Weapon(Mob* mob)
 {
     user = mob;
@@ -46,6 +62,13 @@ Weapon::Weapon(Mob* mob)
     timer=0;
 }
 
+/** @brief Test fin d'attaque
+ *
+ * Cette méthode appelée lors de l'affichage (i.e. à chaque tour de boucle)
+ * permet d'incrémenter le compteur de vie de l'arme et de la détruire
+ * lorsque l'attaque est terminée.
+ *
+ */
 bool Weapon::IsDone()
 {
     if(timer++ > 50)
